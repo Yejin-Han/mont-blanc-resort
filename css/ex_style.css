@@ -1,0 +1,81 @@
+@charset 'utf-8';
+@import 'default.css';
+@import 'def_style.css';
+@import 'header.css';
+@import 'footer.css';
+@import 'top_style.css';
+
+/*=====top=====*/
+#top{ background-image: url('../img/top/bg_top5.jpg'); }
+/*=====top=====*/
+/*=====dining_list=====*/
+#dining_list{ padding: 9% 0; }
+.tab_box{
+	margin: 4% 0;
+	display: flex;
+}
+.tab_box>li{
+	height: 70px; flex: 1 1 0;
+	text-align: center; line-height: 70px;
+	font-size: 1.5rem; font-weight: 500;
+	border: 1px solid var(--main-color1); border-right: 0;
+	transition: all 0.4s;
+}
+.tab_box>li:last-child{ border-right: 1px solid var(--main-color1); }
+.tab_box>li>a{ display: block; width: 100%; height: 100%; }
+.tab_box>li.on{ background: var(--main-color1); }
+.tab_box>li.on>a{ color: #fff; }
+
+.restaurant{
+	position: relative;
+	overflow: hidden;
+	letter-spacing: -1px;
+}
+.restaurant>.content_top{ width: 33.5%; float: right; }
+.restaurant>.content_top>.content_wrapper{ margin-bottom: 106px; }
+.restaurant>.content_top h4{ font-size: 1.5rem; margin-bottom: 5px; }
+.restaurant>.content_top .menu{ font-size: 1rem; }
+.restaurant>.content_top>a{
+	display: block;
+	width: 96px; height: 38px;
+	line-height: 40px; padding-left: 22px;
+	font-size: 0.875rem; font-weight: 700;
+	border: 1px solid var(--main-color1); color: var(--main-color1);
+	background: url('../img/sub/icon_arrow.png') no-repeat right 22px center;
+}
+.restaurant>.img_wrap{
+	clear: right;
+	position: absolute; left: 0; top: 0; overflow: hidden;
+}
+.restaurant>.img_wrap>img{ width: 100%; height: auto; }
+.restaurant>.content_bottom{
+	float: right;
+	width: 80%; height: 316px;
+	background: var(--main-color3);
+	margin: 56px 0 60px;
+}
+.restaurant>.content_bottom>.bottom_wrapper{
+	width: 42%; float: right;
+	margin-top: 50px;
+	font-size: 1rem; color: var(--txt-color);
+}
+.restaurant>.content_bottom .time{ margin-bottom: 10px; }
+.restaurant>.content_top::after,.resuaurant>.content_bottom::after{
+	display: block;
+	content: '';
+	width: 0; height: 0;
+	clear: right;
+}
+/*=====dining_list=====*/
+
+@media screen and (min-width: 1025px){
+	
+}
+@media screen and (max-width: 1024px) and (min-width: 769px){
+	#dining_list{ padding-top: 17%; }
+	.innerbox{ width: 90%; }
+}
+@media screen and (max-width: 768px){
+	#dining_list{ padding-top: 20%; }
+	.innerbox{ width: 90%; }
+}

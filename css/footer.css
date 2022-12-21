@@ -1,0 +1,126 @@
+@charset 'utf-8';
+
+#main_footer{
+	height: 164px; padding: 63px 0 73px;
+	background: var(--main-color1);
+}
+#main_footer a{ color: #fff; }
+.footer_wrap{ display: flex; justify-content: space-between; overflow: visible; }
+.footer_1{ margin-left: 50px; }
+.footer_1>h3{ width: 237px; height: 56px; }
+.footer_1>h3>a{
+	display: block;
+	width: 100%; height: 100%;
+	text-indent: -9999px;
+	background: url('../img/footer/footer_logo.png') no-repeat center top;
+	background-size: 100% auto;
+}
+.footer_2{ width: 55%; }
+.footer_2>.footer_menu{ height: 56px; display: flex; flex-flow: row wrap; align-items: center; }
+.footer_2>.footer_menu>li{ margin-right: 1rem; position: relative; }
+.footer_2>.footer_menu>li:not(:last-child)::after{
+	display: block;
+	content: '';
+	width: 2px; height: 2px;
+	background: rgba(255,255,255,0.7);
+	transform: rotateZ(45deg);
+	position: absolute; right: -8px; top: 50%;
+}
+.footer_2>.footer_menu>li>a{ font-size: 0.935rem; }
+.footer_2>address{
+	margin: 40px 0 0;
+	font-size: 12px; color: rgba(255,255,255,0.8);
+}
+.footer_2>address>p:last-of-type{ margin-top: 5px; }
+.footer_2>address span{ margin-right: 1.3125rem; position: relative; }
+.footer_2>address span:last-of-type{ margin-right: 0; }
+.footer_2>address span:not(:last-of-type)::after{
+	display: block;
+	content: '';
+	width: 1px; height: 10px;
+	background: rgba(255,255,255,0.7);
+	position: absolute; right: -0.8rem; top: 50%;
+	transform: translateY(-50%);
+}
+.footer_3{ margin-right: 50px; }
+.footer_3>.select_wrap{
+	width: 184px; height: 50px;
+	border: 1px solid #fff;
+	background: url('../img/main/btn_select.png') no-repeat right 26px center;
+}
+.footer_3>.select_wrap>select{
+	width: 100%; height: 100%;
+	padding: 0 27px; box-sizing: border-box;
+	font-family: 'IBM Plex Mono', sans-serif; font-size: 15px;
+	border: 0; color: #fff;
+	-webkit-appearance: none; -moz-appearance: none; appearance: none;
+	background: transparent;
+}
+.footer_3>.select_wrap>select::-ms-expand{ display: none; }
+.footer_3>.sns{ float: right; margin-top: 40px; }
+.footer_3>.sns>li{
+	float: left;
+	width: 32px; height: 32px;
+	margin-right: 10px;
+	overflow: hidden;
+}
+.footer_3>.sns>li:last-child{ margin-right: 0; }
+.footer_3>.sns>li>a{
+	display: block;
+	width: 100%; height: 100%;
+	border: 1px solid #fff;
+	transform: scale(0.65) rotateZ(45deg);
+	overflow: hidden;
+}
+.footer_3>.sns>li>a>span{
+	display: block;
+	width: 100%; height: 100%;
+	text-indent: -9999px;
+	background: url('../img/footer/icon_sns1.png') no-repeat center center;
+	background-size: 70% 70%;
+	transform: rotateZ(-45deg);
+}
+.footer_3>.sns>li:nth-child(2)>a>span{ background-image: url('../img/footer/icon_sns2.png'); }
+.footer_3>.sns>li:nth-child(3)>a>span{ background-image: url('../img/footer/icon_sns3.png'); }
+.copyright{
+	margin-top: 15px; text-align: center;
+	color: rgba(255,255,255,0.8); font-size: 12px;
+}
+
+@media screen and (max-width: 1024px) and (min-width: 769px){
+	#main_footer{ padding: 40px 0 53px; }
+	.footer_1{ margin-left: 20px; }
+	.footer_1>h3{ width: 144px; height: 34px; }
+	.footer_2{ width: 100%; margin-left: 30px; }
+	.footer_2>.footer_menu{ height: 34px; }
+	.footer_2>.footer_menu>li>a{ font-size: 13px; }
+	.footer_2>address{ margin: 28px 0 0; }
+	.footer_3{ margin-right: 20px; }
+	.footer_3>.select_wrap{
+		float: right; margin-right: 20px;
+		width: 150px; height: 34px;
+		background-position: right 18px center;
+	}
+	.footer_3>.select_wrap>select{ padding: 0 20px; font-size: 14px; }
+	.footer_3>.sns{ margin-top: 18px; float: right; margin-right: 20px; }
+}
+@media screen and (max-width: 768px){
+	#main_footer{ height: 285px; padding: 20px 0 49px; }
+	.footer_wrap{ display: block; overflow: hidden; }
+	.footer_1{ margin-left: 0; }
+	.footer_1>h3{ width: 144px; height: 34px; margin: 0 auto 35px; }
+	.footer_2{ width: 100%; margin-left: 0; }
+	.footer_2>.footer_menu{ height: 34px; margin-bottom: 26px; justify-content: center; }
+	.footer_2>.footer_menu>li:not(:last-child)::after{ right: -6px; }
+	.footer_2>.footer_menu>li>a{ font-size: 13px; }
+	.footer_2>address{ margin: 26px 0 0; font-size: 10px; text-align: center; }
+	.footer_3{ margin: 20px 0; }
+	.footer_3>.select_wrap{
+		float: left; margin-left: 10%; margin-right: 0;
+		width: 150px; height: 34px;
+		background-position: right 18px center;
+	}
+	.footer_3>.select_wrap>select{ padding: 0 20px; font-size: 14px;}
+	.footer_3>.sns{ margin: 0 10% 0 0; }
+	.copyright{ clear: both; font-size: 10px; margin-top: 20px; }
+}

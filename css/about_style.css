@@ -1,0 +1,121 @@
+@charset 'utf-8';
+@import 'default.css';
+@import 'def_style.css';
+@import 'header.css';
+@import 'footer.css';
+@import 'top_style.css';
+
+h3{ font-size: 42px; text-align: center; }
+/*=====top=====*/
+#top{ background-image: url('../img/top/bg_top1.jpg'); }
+/*=====top=====*/
+/*=====intro=====*/
+#intro{
+	padding: 10% 0;
+	background: url('../img/sub/bg_intro-d.jpg') no-repeat 0 0/cover;
+}
+#intro .content_header{ /* 스크립트로 h3의 너비를 받아서 지정하기 */ width: 325px; margin: 0 auto; }
+#intro .content_header>h3{ font-family: 'Montserrat', sans-serif; text-align: center; }
+#intro .content_header>p{
+	text-align: right;
+	font-size: 20px; color: var(--txt-color);
+	margin-bottom: 130px;
+	position: relative;
+}
+#intro .content_header>p::after{
+	display: block;
+	content: '';
+	width: 52px; height: 1px;
+	background: #333;
+	position: absolute; left: 50%; bottom: -65px;
+	transform: translateX(-50%);
+}
+#intro .content_bottom{
+	text-align: center;
+	letter-spacing: -1px; color: var(--txt-color);
+}
+#intro .content_bottom>h4{ font-size: 20px; margin-bottom: 30px; }
+#intro .content_bottom>p{ line-height: 1.6em; }
+/*=====intro=====*/
+/*=====strength=====*/
+#strength>div{ padding: 5% 0; }
+#strength>.s2{ background: var(--dominant-color1); }
+#strength .innerbox{
+	max-width: 1080px;
+	display: flex; justify-content: space-between; gap: 8%; align-items: center;
+	letter-spacing: -1px;
+	transition: all 0.4s;
+	position: relative;
+}
+#strength>.s2>.innerbox{
+	flex-direction: row-reverse;
+	text-align: right;
+}
+#strength .text_wrap{ width: 50%; }
+#strength h4{
+	font-family: 'Gmarket Sans', sans-serif; font-size: 24px;
+	margin-bottom: 40px;
+}
+#strength p{
+	line-height: 1.8em; font-size: 1rem;
+	background: none; transform: none;
+	position: relative;
+}
+#strength p::after{
+	display: block;
+	content: '';
+	width: 150%; height: 1px;
+	background: #333;
+	position: absolute; left: 0; top: -18px;
+}
+#strength>.s2 p::after{ right: 0; left: auto; }
+#strength .img_wrap{ max-width: 556px; width: 100%; }
+#strength .img_wrap>img{
+	width: 100%; height: auto;
+	border-radius: 50px;
+}
+/*=====strength=====*/
+
+@media screen and (max-width: 1024px) and (min-width: 769px){
+	#intro{
+		padding: 20% 0;
+		background-image: url('../img/sub/bg_intro-t.jpg');
+	}
+	.innerbox{ width: 90%; }
+	#strength>div{ padding: 10% 0; }
+	#strength .innerbox{ gap: 5%; }
+	#strength .text_wrap{ width: 60%; }
+}
+@media screen and (max-width: 768px){
+	#intro{
+		padding: 50% 0;
+		background-image: url('../img/sub/bg_intro-m.jpg');
+	}
+	.innerbox{ width: 90%; }
+	#intro .content_header{ width: 248px; }
+	#intro .content_header>h3{ font-size: 32px; }
+	#intro .content_header>p{
+		font-size: 16px;
+		margin-bottom: 72px;
+	}
+	#intro .content_header>p::after{ width: 34px; bottom: -34px; }
+	#intro .content_bottom>h4{ font-size: 16px; margin-bottom: 20px; }
+	#intro .content_bottom>p{ font-size: 14px; }
+	#strength>div{ padding: 20% 0; }
+	#strength .innerbox{ display: block; gap: 0; }
+	#strength>.s2>.innerbox{ text-align: left; }
+	#strength .text_wrap{ width: 100%; }
+	#strength h4{ font-size: 20px; }
+	#strength p{
+		position: absolute; left: 50%; bottom: 20px;
+		width: calc(85% - 20px); height: calc(90% - 80px);
+		line-height: 1.6em;
+		padding: 2% 3%;
+		background: rgba(255,255,255,0.7);
+		transform: translateX(-50%);
+	}
+	#strength p::after{ width: 130px; top: -45px; left: -46px; }
+	#strength>.s2 p::after{ right: -46px; }
+	#strength .img_wrap{ margin: 0 auto; }
+	#strength .img_wrap>img{ border-radius: 25px; }
+}
