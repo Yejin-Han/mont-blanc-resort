@@ -12,103 +12,7 @@
 	</head>
 	<body>
 		<header id="main_header">
-			<h1><a href="#">MONT BLANC RESORT</a></h1>
-			<button type="button" class="toggle t m">
-				<span class="bar1"></span><span class="bar2"></span><span class="bar3"></span>
-				<span class="sr_only">전체메뉴</span>
-			</button>
-			<a href="#" class="back t m">뒤로 가기</a>
-			<nav id="gnb">
-				<div class="innerbox">
-					<ul>
-						<li>
-							<span class="t m"></span>
-							<a href="#">리조트 안내</a>
-							<div class="sub">
-								<ul>
-									<li><a href="#">몽블랑리조트 소개</a></li>
-									<li><a href="#">리조트 안내도</a></li>
-									<li><a href="#">이용안내</a></li>
-								</ul>
-							</div>
-						</li>
-						<li>
-							<span class="t m"></span>
-							<a href="#">스키월드</a>
-							<div class="sub">
-								<ul>
-									<li><a href="#">슬로프 안내</a></li>
-									<li><a href="#">리프트 안내</a></li>
-									<li><a href="#">오픈현황</a></li>
-									<li><a href="#">라이브 캠</a></li>
-									<li><a href="#">눈썰매장</a></li>
-									<li><a href="#">패트롤</a></li>
-								</ul>
-							</div>
-						</li>
-						<li>
-							<span class="t m"></span>
-							<a href="#">워터파크</a>
-							<div class="sub">
-								<ul>
-									<li><a href="#">이용안내</a></li>
-									<li><a href="#">메인시설</a></li>
-									<li><a href="#">편의시설</a></li>
-								</ul>
-							</div>
-						</li>
-						<li>
-							<span class="t m"></span>
-							<a href="#">객실</a>
-							<div class="sub">
-								<ul>
-									<li><a href="#">이용안내</a></li>
-									<li><a href="#">가루눈동</a></li>
-									<li><a href="#">포슬눈동</a></li>
-									<li><a href="#">함박눈동</a></li>
-									<li><a href="#">객실 패키지</a></li>
-								</ul>
-							</div>
-						</li>
-						<li>
-							<span class="t m"></span>
-							<a href="#">체험·휴식</a>
-							<div class="sub">
-								<ul>
-									<li><a href="#">다이닝</a></li>
-									<li><a href="#">액티비티</a></li>
-									<li><a href="#">부대시설</a></li>
-								</ul>
-							</div>
-						</li>
-						<li>
-							<span class="t m"></span>
-							<a href="#">리조트 소식</a>
-							<div class="sub">
-								<ul>
-									<li><a href="#">공지사항</a></li>
-									<li><a href="#">이벤트</a></li>
-									<li><a href="#">FAQ</a></li>
-								</ul>
-							</div>
-						</li>
-					</ul>
-				</div>
-				<div class="weather_wrap d">
-					<span class="weather">맑음</span>
-					<span class="degree">-5&deg;</span>
-				</div>
-				<div class="sub_bg d"></div>
-			</nav>
-			<nav id="tnb">
-				<p class="t m">몽블랑리조트에 오신 것을 환영합니다.</p>
-				<ul>
-					<li><a href="#">로그인</a></li>
-					<li><a href="#">회원가입</a></li>
-					<li><a href="#">마이페이지</a></li>
-					<li><a href="#">사이트맵</a></li>
-				</ul>
-			</nav>
+			<? include 'header.html' ?>
 		</header>
 		<hr>
 		<section id="top" class="d">
@@ -195,46 +99,7 @@
 		</section>
 		<hr>
 		<footer id="main_footer">
-			<div class="footer_wrap">
-				<div class="footer_1">
-					<h3><a href="#">MONT BLANC RESORT</a></h3>
-				</div>
-				<div class="footer_2">
-					<ul class="footer_menu">
-						<li><a href="#"><strong>개인정보처리방침</strong></a></li>
-						<li><a href="#">영상정보처리기기운영관리방침</a></li>
-						<li><a href="#">마이페이지</a></li>
-						<li><a href="#">사이트맵</a></li>
-					</ul>
-					<address>
-						<p>
-							<span>강원도 평창군 몽블랑면 몽블랑로 123</span>
-							<span>대표이사 : 한예진</span>
-							<br class="t m">
-							<span>사업장등록번호 : 123-45-67890</span>
-							<span>통신판매신고 : 제 2022-12호</span>
-						</p>
-						<p>
-							<span>고객센터 : 1577-1577(&num;0)</span>
-							<span>객실예약문의 : 1577-1588(&num;1)</span>
-							<span>분양/회원문의 : 1577-1599(&num;2)</span>
-						</p>
-					</address>
-				</div>
-				<div class="footer_3">
-					<div class="select_wrap">
-						<select name="family_site" id="family_site">
-							<option value="" selected>Family Site</option>
-						</select>
-					</div>
-					<ul class="sns">
-						<li><a href="#"><span>facebook</span></a></li>
-						<li><a href="#"><span>instagram</span></a></li>
-						<li><a href="#"><span>blog</span></a></li>
-					</ul>
-				</div>
-			</div>
-			<p class="copyright">COPYRIGHT &copy; MONT BLANC RESORT ALL RIGHT RESERVED. </p>
+			<? include 'footer.html' ?>
 		</footer>
 	</body>
 </html>
