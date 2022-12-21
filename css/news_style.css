@@ -59,14 +59,29 @@
 	transform: translateY(-50%);
 }
 .notice-table .mini_tab>li>a{ color: #666; }
-.notice-table table{ width: 100%; }
-.notice-table tr{ height: 65px; }
+.notice-table table{
+	width: 100%;
+	border-top: 1px solid #222;
+}
+.notice-table tr{
+	height: 65px;
+	border-bottom: 1px solid var(--table-color2);
+}
+.notice-table tr:nth-of-type(2n){ background: #eef4fa; }
+.notice-table th{ color: #222; }
 .notice-table th,.notice-table td{ text-align: center; }
-.notice-table .tal{ text-align: left;}
 .notice-table td:nth-of-type(1){ width: 15%; }
 .notice-table td:nth-of-type(2){ width: 15%; }
 .notice-table td:nth-of-type(3){ width: 55%; }
 .notice-table td:nth-of-type(4){ width: 15%; }
+.notice-table td>.mega{
+	display: block;
+	width: 17px; height: 13px;
+	text-indent: -9999px;
+	background: url('../img/sub/icon_notice.png') no-repeat;
+	position: relative; left: 50%; transform: translateX(-50%);
+}
+.notice-table .tal{ text-align: left;}
 
 /*=====notice_wrap=====*/
 
@@ -74,10 +89,52 @@
 	
 }
 @media screen and (max-width: 1024px) and (min-width: 769px){
-	.notice-table thead{ display: none; }
-	.notice-table td:nth-of-type(1){ display: none; }
+	.innerbox{ width: 90%; }
+	#notice_wrap{ padding-top: 17%; }
+	.search_area{ height: 269px;}
+	.search_area>form{
+		width: 80%; height: 90%;
+		left: 50%; top:50%; transform: translate(-50%,-50%);
+	}
+	.search_area #search_classification{
+		width: 100%; height: 30%;
+		margin-right: 0; margin-bottom: 2%;
+	}
+	.search_area #search_txt{
+		width: 100%; height: 30%;
+		margin-right: 0; margin-bottom: 5%;
+		position: static;
+	}
+	.search_area #search_btn{
+		display: inline-block;
+		width: 100%; height: 20%;
+		border-radius: 25px;
+	}
+	.notice-table .mini_tab{ display: none !important; }
+	.notice-table thead,.notice-table td:nth-of-type(1){ display: none; }
 }
 @media screen and (max-width: 768px){
-	.notice-table thead{ display: none; }
-	.notice-table td:nth-of-type(1){ display: none; }
+	.innerbox{ width: 90%; }
+	#notice_wrap{ padding-top: 17%; }
+	.search_area{ height: 213px;}
+	.search_area>form{
+		width: 80%; height: 90%;
+		left: 50%; top:50%; transform: translate(-50%,-50%);
+	}
+	.search_area #search_classification{
+		width: 100%; height: 30%;
+		margin-right: 0; margin-bottom: 2%;
+	}
+	.search_area #search_txt{
+		width: 100%; height: 30%;
+		margin-right: 0; margin-bottom: 5%;
+		position: static;
+	}
+	.search_area #search_btn{
+		display: inline-block;
+		width: 100%; height: 20%;
+		border-radius: 25px;
+	}
+	.notice-table .mini_tab{ display: none !important; }
+	.notice-table thead,.notice-table td:nth-of-type(1){ display: none; }
 }
