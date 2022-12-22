@@ -7,9 +7,6 @@ const gnb_sub_bg=gnb.querySelector('.sub_bg');
 const gnb_weather=gnb.querySelector('.weather_wrap');
 const tnb=document.querySelector('#tnb');
 const toggle=header.querySelector('.toggle');
-console.log(`${header.offsetHeight}`);
-console.log(`${gnb.clientHeight}`);
-console.log(`${header.offsetHeight-gnb.clientHeight}`);
 
 // header style change
 const headerChange=()=>{ header.classList.add('on'); }
@@ -33,8 +30,8 @@ gnb_ul.addEventListener('mouseenter',()=>{
 });
 gnb_ul.addEventListener('mouseleave',()=>{
 	if(window.matchMedia('screen and (min-width: 1025px)').matches){
-		gnb_sub.forEach((elem)=>{
-			elem.classList.remove('active');
+		gnb_sub.forEach((sub)=>{
+			sub.classList.remove('active');
 		});
 		gnb_weather.classList.remove('active');
 		gnb_sub_bg.classList.remove('active');
@@ -83,7 +80,20 @@ toggle.addEventListener('click',()=>{
 });
 
 //tablet,mobile accordion menu
-gnb_li
+gnb_li.forEach((li)=>{
+	 li.addEventListener('click',(e)=>{
+		if(matchMedia("screen and (max-width: 1024px)").matches){
+			e.preventDefault();
+			let sub=e.currentTarget.querySelector('.sub');
+			sub.classList.toggle('active');
+			if(sub.style.maxHeight){
+				sub.style.maxHeight=null;
+			} else{
+				sub.style.maxHeight=`${sub.scrollHeight}px`;
+			}
+		}
+	 });
+});
 
 //resize
 window.addEventListener('resize',()=>{
@@ -101,5 +111,6 @@ window.addEventListener('resize',()=>{
 		gnb.style.left=`${100}%`;
 		tnb.style.left=`${100}%`;
 		tnb.style.right='auto';
+		toggle.classList.remove('on');
 	}
 });

@@ -189,12 +189,14 @@ h1>a{
 		border-bottom: 1px solid #ededed;
 	}
 	#gnb .sub{
-		width: calc(100% - 70px); height: 260px;
+		width: calc(100% - 70px); height: auto; max-height: 0;
 		position: absolute; top: 60px; left: 0; z-index: 100;
-		padding: 10px 0 0 70px; box-sizing: border-box;
-		border-right: 0;
+		padding: 10px 0 0 70px; box-sizing: border-box; border-right: 0;
+		position: absolute; left: 0; top: 60px;
+		transition: max-height 0.2s ease-out; overflow: hidden;
 		display: none;
 	}
+	#gnb .sub.active{ display: block; }
 	#gnb li:first-child>.sub{ border-left: 0; }
 	#gnb .sub li{ margin-bottom: 10px; }
 	#gnb .sub li:last-child{ margin-bottom: 0; }
