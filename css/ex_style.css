@@ -71,7 +71,7 @@
 #popup{
 	width: 100%;
 	position: relative;
-	/* display: none; */
+	display: none;
 }
 .popup_bg{
 	width: 100vw; height: 100vh;
