@@ -20,8 +20,31 @@ h2{ font-size: 42px; }
 	background-size: cover;
 }
 .swiper-button-next:after,.swiper-button-prev:after{ display: none; }
-.swiper1 .swiper-horizontal>.swiper-pagination-bullets,.swiper1 .swiper-pagination-bullets.swiper-pagination-horizontal,.swiper1 .swiper-pagination-custom,.swiper-pagination-fraction{ bottom: 3%; }
-.swiper1 .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,.swiper1 .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet{ margin: 0 8px; }
+.swiper1 .swiper-horizontal>.swiper-pagination-bullets,.swiper1 .swiper-pagination-bullets.swiper-pagination-horizontal,.swiper1 .swiper-pagination-custom,.swiper-pagination-fraction{ bottom: 7%; }
+.swiper1 .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,.swiper1 .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet{ margin: 0 20px; }
+.swiper1 .swiper-pagination-bullet{
+	display: inline-block;
+	width: 10px; height: 10px;
+	background: transparent;
+	border: 2px solid #fff;
+	opacity: 1;
+	transition: all 0.2s;
+	position: relative;
+}
+.swiper1 .swiper-pagination-bullet>span{
+	display: block;
+	position: absolute; left: 50%; top: 50%;
+	transform: translate(-50%,-50%);
+	width: 0; height: 0;
+	border: 0; border-radius: 50%;
+	transition: all 0.2s;
+}
+.swiper1 .swiper-pagination-bullet:hover{ background: #fff; }
+.swiper1 .swiper-pagination-bullet-active{ background: var(--accent-color2); }
+.swiper1 .swiper-pagination-bullet:hover>span,.swiper1 .swiper-pagination-bullet-active>span{
+	width: 30px; height: 30px;
+	border: 2px solid var(--accent-color2);
+}
 .info_wrap{
 	width: 100%; height: 75px;
 	background: #222;
@@ -57,6 +80,12 @@ h2{ font-size: 42px; }
 .info_wrap>.notice_wrap>span{ flex: 1 1 0; color: #fff; text-align: right; }
 /*=====section1:main_visual=====*/
 /*=====section2:q_btns=====*/
+@keyframes btn_wave{
+	0%{ top: 0; }
+	50%{ top: -2rem; }
+	80%{ top: 1.4rem; }
+	100%{ top: 0; }
+}
 #q_btns{ padding: 7% 0 8%; }
 #q_btns>h2{
 	font-family: 'Montserrat', sans-serif;
@@ -64,7 +93,10 @@ h2{ font-size: 42px; }
 	margin: 0 0 78px;
 }
 #q_btns>ul{ display: flex; flex-flow: row wrap; justify-content: space-between; }
-#q_btns>ul>li{ width: 168px; height: 198px; }
+#q_btns>ul>li{
+	width: 168px; height: 198px;
+	position: relative;
+}
 #q_btns>ul>li>a{ display: block; width: 100%; height: 100%; }
 #q_btns>ul>li>a>.circle{
 	display: block;
@@ -82,6 +114,25 @@ h2{ font-size: 42px; }
 	display: block;
 	margin-top: 19px; text-align: center;
 	color: var(--txt-color);
+}
+#q_btns>ul>li.appear{ animation: btn_wave 0.8s 0s 1 cubic-bezier(.4,.08,.64,1.24) normal both; }
+#q_btns>ul>li:nth-child(1).appear{
+	animation-delay: 0s;
+}
+#q_btns>ul>li:nth-child(2).appear{
+	animation-delay: 0.2s;
+}
+#q_btns>ul>li:nth-child(3).appear{
+	animation-delay: 0.4s;
+}
+#q_btns>ul>li:nth-child(4).appear{
+	animation-delay: 0.6s;
+}
+#q_btns>ul>li:nth-child(5).appear{
+	animation-delay: 0.8s;
+}
+#q_btns>ul>li:nth-child(6).appear{
+	animation-delay: 1s;
 }
 /*=====section2:q_btns=====*/
 /*=====section3:slope=====*/
@@ -142,6 +193,9 @@ h2{ font-size: 42px; }
 .pagination_bg>.pagination>.curr{ margin-left: 24px; font-weight: bold; color: var(--main-color1); }
 /*=====section4:promotion=====*/
 
+@media screen and (min-width: 1025px){
+
+}
 @media screen and (max-width: 1024px) and (min-width: 769px){
 	.innerbox{ width: 100%; }
 	/*=====section1:main_visual=====*/

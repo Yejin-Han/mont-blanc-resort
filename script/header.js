@@ -2,6 +2,7 @@ const header=document.querySelector('#main_header');
 const gnb=document.querySelector('#gnb');
 const gnb_ul=gnb.querySelector('.innerbox>ul');
 const gnb_li=gnb_ul.querySelectorAll('li');
+const gnb_li_a=document.querySelectorAll('#gnb>.innerbox>ul>li>a');
 const gnb_sub=gnb.querySelectorAll('.sub');
 const gnb_sub_bg=gnb.querySelector('.sub_bg');
 const gnb_weather=gnb.querySelector('.weather_wrap');
@@ -21,8 +22,8 @@ header.addEventListener('mouseleave',()=>{
 // desktop gnb pull down
 gnb_ul.addEventListener('mouseenter',()=>{
 	if(window.matchMedia('screen and (min-width: 1025px)').matches){
-		gnb_sub.forEach((elem)=>{
-			elem.classList.add('active');
+		gnb_sub.forEach((sub)=>{
+			sub.classList.add('active');
 		});
 		gnb_weather.classList.add('active');
 		gnb_sub_bg.classList.add('active');
@@ -80,19 +81,25 @@ toggle.addEventListener('click',()=>{
 });
 
 //tablet,mobile accordion menu
-gnb_li.forEach((li)=>{
-	 li.addEventListener('click',(e)=>{
+gnb_li.forEach(li=>{
+	li.addEventListener('click',(e)=>{
 		if(matchMedia("screen and (max-width: 1024px)").matches){
 			e.preventDefault();
-			let sub=e.currentTarget.querySelector('.sub');
-			sub.classList.toggle('active');
-			if(sub.style.maxHeight){
-				sub.style.maxHeight=null;
+			const clicked_li=e.currentTarget;
+			if(clicked_li.querySelector('.sub').classList.contains('active')){
+				clicked_li.querySelector('a').classList.remove('active');
+				clicked_li.querySelector('.sub').classList.remove('active');
 			} else{
-				sub.style.maxHeight=`${sub.scrollHeight}px`;
+				const nodes=[...clicked_li.parentElement.children];
+				nodes.forEach(elem=>{
+					elem.querySelector('a').classList.remove('active');
+					elem.querySelector('.sub').classList.remove('active');
+				});
+				clicked_li.querySelector('a').classList.add('active');
+				clicked_li.querySelector('.sub').classList.add('active');
 			}
 		}
-	 });
+	});
 });
 
 //resize
@@ -104,6 +111,9 @@ window.addEventListener('resize',()=>{
 		gnb.style.left=`${50}%`;
 		tnb.style.left='auto';
 		tnb.style.right=`${20}px`;
+		gnb_sub.forEach(elem=>{
+			elem.classList.remove('active');
+		})
 	} else if(matchMedia("screen and (max-width: 1024px)").matches){
 		gnb.classList.remove('fix');
 		gnb.style.transition='none';
@@ -112,5 +122,11 @@ window.addEventListener('resize',()=>{
 		tnb.style.left=`${100}%`;
 		tnb.style.right='auto';
 		toggle.classList.remove('on');
+		gnb_li_a.forEach(elem=>{
+			elem.classList.remove('active');
+		})
+		gnb_sub.forEach(elem=>{
+			elem.classList.remove('active');
+		})
 	}
 });
