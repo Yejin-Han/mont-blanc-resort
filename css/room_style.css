@@ -7,6 +7,9 @@
 
 /*=====top=====*/
 #top{ background-image: url('../img/top/bg_top4.jpg'); }
+.page_location>li:not(.m1){ padding-left: 27px; }
+.page_location>li:not(last-child){ padding-right: 25px; }
+.page_location .sub{ left: 22px; }
 /*=====top=====*/
 /*=====detail=====*/
 #detail{ padding: 10% 0; }
