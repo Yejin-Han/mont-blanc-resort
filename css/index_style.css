@@ -115,7 +115,7 @@ h2{ font-size: 42px; }
 	margin-top: 19px; text-align: center;
 	color: var(--txt-color);
 }
-#q_btns>ul>li.appear{ animation: btn_wave 0.8s 0s 1 cubic-bezier(.4,.08,.64,1.24) normal both; }
+#q_btns>ul>li.appear{ animation: btn_wave 0.8s 0s 1 cubic-bezier(.35,.05,.56,1.31) normal both; }
 #q_btns>ul>li:nth-child(1).appear{
 	animation-delay: 0s;
 }
@@ -155,8 +155,27 @@ h2{ font-size: 42px; }
 	font-size: 0.875rem; color: var(--main-color1);
 	font-weight: bold; letter-spacing: -1px;
 	border: 2px solid var(--main-color1); border-radius: 20px;
+	position: relative; overflow: hidden;
+	transition: all 0.2s ease-in-out;
 }
 #slope .more_btn{ width: 10%; }
+.more_btn::before{
+	display: block;
+	content: '';
+	width: 3em; height: 100%;
+	background: rgba(255,255,255,0.5);
+	position: absolute; left: -4.5em; top: 0;
+	transform: skewX(-45deg) translateX(0);
+	transition: none;
+}
+.more_btn:hover{
+	background: var(--main-color1);
+	color: #fff;
+}
+.more_btn:hover::before{
+	transform: skewX(-45deg) translateX(15em);
+	transition: all 0.5s ease-in-out;
+}
 /*=====section3:slope=====*/
 /*=====section4:promotion=====*/
 #promotion{ position: relative; }
@@ -229,6 +248,7 @@ h2{ font-size: 42px; }
 	#slope{ background-image: url('../img/main/bg_sect3-t.jpg'); }
 	#slope img{ max-width: 899px; width: 90%; }
 	#slope .more_btn{ width: 16%; }
+	.more_btn:hover::before{ transform: skewX(-45deg) translateX(16em); }
 	/*=====section3:slope=====*/
 	/*=====section4:promotion=====*/
 	#promotion{ padding-top: 8%; }
@@ -302,6 +322,7 @@ h2{ font-size: 42px; }
 	#slope p{ margin-bottom: 6%; }
 	#slope img{ max-width: 377px; width: 90%; }
 	#slope .more_btn{ width: 25%; }
+	.more_btn:hover::before{ transform: skewX(-45deg) translateX(16.5em); }
 	/*=====section3:slope=====*/
 	/*=====section4:promotion=====*/
 	#promotion{ padding-top: 12%; }
@@ -324,7 +345,7 @@ h2{ font-size: 42px; }
 		line-height: 1.6em; color: #fff;
 		position: absolute; top: 0; left: 10px;
 	}
-	.swiper2 .swiper-slide p{ color: var(--txt-color); margin-top: 3%; }
+	.swiper2 .swiper-slide p{ color: var(--txt-color); margin-top: 3%; font-size: 1.1rem; }
 	.swiper2 .swiper-button-prev,.swiper2 .swiper-rtl .swiper-button-next{ left: 3%; top: 60%; }
 	.swiper2 .swiper-button-next,.swiper2 .swiper-rtl .swiper-button-prev{ right: 3%; top: 60%; }
 	.swiper2 .swiper-button-prev{
