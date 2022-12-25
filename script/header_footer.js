@@ -8,6 +8,7 @@ const gnb_sub_bg=gnb.querySelector('.sub_bg');
 const gnb_weather=gnb.querySelector('.weather_wrap');
 const tnb=document.querySelector('#tnb');
 const toggle=header.querySelector('.toggle');
+const familySite=document.querySelector('.select_wrap>button');
 
 // header style change
 const headerChange=()=>{ header.classList.add('on'); }
@@ -129,4 +130,12 @@ window.addEventListener('resize',()=>{
 			elem.classList.remove('active');
 		})
 	}
+});
+
+//family_site click animation
+familySite.querySelector('span').style.transition='none';
+familySite.addEventListener('click',(e)=>{
+	e.currentTarget.querySelector('span').style.transition='all 0.4s';
+	e.currentTarget.querySelector('span').classList.toggle('active');
+	e.currentTarget.nextElementSibling.querySelector('ul').classList.toggle('active');
 });

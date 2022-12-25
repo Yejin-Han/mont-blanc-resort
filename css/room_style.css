@@ -84,14 +84,17 @@
 }
 @media screen and (max-width: 768px){
 	#detail{ padding-top: 20%; }
-	.guide_list>li{
-		display: block !important;
+	.guide_list>li{ display: block !important; }
+	.guide_list>li>.guide_title{
 		background: url('../img/sub/select_down.png') no-repeat right 5% center;
 	}
 	.guide_list>li>.guide_info{
-		display: none !important;
+		display: block !important;
 		border-top: 1px dotted #ddd;
+		height: 0; padding: 0 5%; opacity: 0;
+		transition: all 0.4s; overflow: hidden;
 	}
+	.guide_list .guide_info.active{ height: auto; padding: 3% 5%; opacity: 1; }
 	.guide_list>li>.guide_title>.li_icon{
 		width: 32px; height: 32px;
 		margin-right: 5%;
@@ -106,4 +109,6 @@
 	.guide_list>.li8>.guide_title>.li_icon{ background-position: -224px 0; }
 	.guide_list>.li9>.guide_title>.li_icon{ background-position: -256px 0; }
 	.guide_list .guide_info>p{ margin-bottom: 5px; }
+	.guide_list .guide_info>span{ font-size: 0.9rem; text-align: left; }
+	.guide_list .guide_info>a{ font-size: 0.9rem; }
 }
