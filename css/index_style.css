@@ -67,6 +67,7 @@ h2{ font-size: 42px; }
 .info_wrap>.notice_wrap{
 	width: 1024px; height: 100%;
 	display: flex; justify-content: space-between; align-items: center;
+	overflow: hidden;
 }
 .info_wrap>.notice_wrap>h2{
 	font-family: 'IBM Plex Sans', sans-serif;
@@ -74,8 +75,11 @@ h2{ font-size: 42px; }
 	color: #fff;
 }
 .info_wrap>.notice_wrap>p{
-	width: 80%;
-	display: flex; justify-content: space-between; align-items: center; }
+	width: 80%; opacity: 1;
+	display: flex; justify-content: space-between; align-items: center;
+	transition: all 0.2s;
+}
+.info_wrap>.notice_wrap>p:nth-of-type(2){ display: none; }
 .info_wrap>.notice_wrap>p>a{ display: block; padding: 5px 0; color: #fff; }
 .info_wrap>.notice_wrap>span{ flex: 1 1 0; color: #fff; text-align: right; }
 /*=====section1:main_visual=====*/

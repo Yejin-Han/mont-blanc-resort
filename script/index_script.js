@@ -34,7 +34,31 @@ bullet.forEach(elem=>{
   elem.appendChild(span);
 });
 
-//info_wrap
+//info_wrap notice_wrap
+const noticeWrap=document.querySelector('.notice_wrap');
+const noticeList=noticeWrap.querySelectorAll('p');
+/* const noticeTitle=noticeWrap.querySelector('a');
+const noticeDate=noticeWrap.querySelector('span'); */
+//fade가 적용이 안된다...
+let noticeIndex=0;
+const noticeSlide=()=>{
+  noticeList[noticeIndex].style.opacity='0';
+  noticeList[noticeIndex].style.display='none';
+  noticeIndex++;
+  noticeIndex=noticeIndex%(noticeList.length);
+  noticeList[noticeIndex].style.display='flex';
+  noticeList[noticeIndex].style.opacity='1';
+}
+setInterval(noticeSlide,5000);
+/* let xhr=new XMLHttpRequest();
+xhr.open('POST','파일이름');
+xhr.onreadystatechange=()=>{
+  if(xhr.readyState===4 && xhr.status===200){
+    const _json=xhr.responseText;
+    const json=JSON.parse(_json);
+    console.log(json);
+  }
+} */
 
 //q_btns appear animation
 document.addEventListener('scroll',()=>{
@@ -64,15 +88,14 @@ const txt_area=promo.querySelector('p');
 const secondSwiper=document.querySelector('.swiper2');
 const slideList=secondSwiper.querySelectorAll('.swiper-slide');
 const secondSwiperTxt=secondSwiper.querySelectorAll('p');
+let pageNum=document.querySelector('.curr');
 let txt_list=new Array();
-let pageNum=1;
 for(let value of secondSwiperTxt){
   txt_list.push(value.innerHTML);
 }
 for(let i=0; i<txt_list.length; i++){
   secondSwiperTxt.innerHTML=txt_list[i];
 }
-/* 특정 슬라이드가 메인일 때 p의 innerHTML과 pagination>curr의 innerHTML을 계속 갱신하고 싶다.*/
 
 //promotion swiper
 const swiper2 = new Swiper('.swiper2', {
@@ -92,6 +115,16 @@ const swiper2 = new Swiper('.swiper2', {
     1024: {
       spaceBetween: 0,
       slidesPerView: 1,
+    },
+  },
+  on: {
+    slideChange: function(e){
+      for(let i=0; i<slideList.length; i++){
+        if(this.realIndex==i){
+          txt_area.innerHTML=txt_list[i];
+          pageNum.innerHTML=`${i+1}`;
+        }
+      }
     },
   },
   observer: true,
