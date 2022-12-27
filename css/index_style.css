@@ -74,7 +74,8 @@ h2{ font-size: 42px; }
 	font-size: 20px;
 	color: #fff;
 }
-.info_wrap>.notice_wrap>p{
+.info_wrap>.notice_wrap .content_wrap
+.info_wrap>.notice_wrap p{
 	width: 80%; opacity: 1;
 	display: flex; justify-content: space-between; align-items: center;
 	transition: all 0.2s;
@@ -84,7 +85,7 @@ h2{ font-size: 42px; }
 .info_wrap>.notice_wrap>span{ flex: 1 1 0; color: #fff; text-align: right; }
 /*=====section1:main_visual=====*/
 /*=====section2:q_btns=====*/
-@keyframes btn_wave{
+@keyframes btn_wave{ /*태블릿모바일 생각하기*/
 	0%{ top: 0; }
 	50%{ top: -2rem; }
 	80%{ top: 1.4rem; }
@@ -152,33 +153,10 @@ h2{ font-size: 42px; }
 	max-width: 1080px; width: 100%; height: auto;
 	margin: 0 auto 6%;
 }
-.more_btn{
-	display: block;
-	margin: 0 auto;
+#slope .more_btn{
+	width: 10%; margin: 0 auto;
 	text-align: center; padding: 8px 0;
-	font-size: 0.875rem; color: var(--main-color1);
-	font-weight: bold; letter-spacing: -1px;
 	border: 2px solid var(--main-color1); border-radius: 20px;
-	position: relative; overflow: hidden;
-	transition: all 0.2s ease-in-out;
-}
-#slope .more_btn{ width: 10%; }
-.more_btn::before{
-	display: block;
-	content: '';
-	width: 3em; height: 100%;
-	background: rgba(255,255,255,0.5);
-	position: absolute; left: -4.5em; top: 0;
-	transform: skewX(-45deg) translateX(0);
-	transition: none;
-}
-.more_btn:hover{
-	background: var(--main-color1);
-	color: #fff;
-}
-.more_btn:hover::before{
-	transform: skewX(-45deg) translateX(15em);
-	transition: all 0.5s ease-in-out;
 }
 /*=====section3:slope=====*/
 /*=====section4:promotion=====*/

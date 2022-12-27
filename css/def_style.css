@@ -41,6 +41,30 @@ h2,h3{
 h3{ font-size: 42px; text-align: center; }
 .innerbox{ max-width: 1280px; width: 100%; margin: 0 auto; }
 
+.more_btn{
+	display: block; color: var(--main-color1);
+	font-size: 0.875rem; font-weight: 700; letter-spacing: -1px;
+	position: relative; overflow: hidden;
+	transition: all 0.2s ease-in-out;
+}
+.more_btn::before{
+	display: block;
+	content: '';
+	width: 3em; height: 100%;
+	background-color: rgba(255,255,255,0.5);
+	position: absolute; left: -4.5em; top: 0;
+	transform: skewX(-45deg) translateX(0);
+	transition: none;
+}
+.more_btn:hover{
+	background-color: var(--main-color1);
+	color: #fff;
+}
+.more_btn:hover::before{
+	transition: all 0.5s ease-in-out;
+	transform: skewX(-45deg) translateX(15em);
+}
+
 @media screen and (max-width: 768px){
 	html,body{ font-size: 14px; }
   h3{ font-size: 32px; }

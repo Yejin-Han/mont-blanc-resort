@@ -1,4 +1,5 @@
-const list1=[
+const list=new Array();
+list[0]=[
   {
     "name": "몽블랑카츠",
     "menu": "메뉴 : 우동, 튀김, 돈까스 등",
@@ -42,7 +43,7 @@ const list1=[
     "place": "위치 : 센터 2층 장터 내"
   }
 ];
-const list2=[
+list[1]=[
   {
     "name": "전망대스낵",
     "menu": "메뉴 : 라면, 우동, 음료 등",
@@ -79,7 +80,7 @@ const list2=[
     "place": "위치 : 파크 1층 푸드코트 내"
   }
 ];
-const list3=[
+list[2]=[
   {
     "name": "버거킹",
     "menu": "메뉴 : 햄버거 등",
@@ -102,7 +103,7 @@ const list3=[
     "place": "위치 : 광장 1층 푸드코트 내"
   }
 ];
-const list4=[
+list[3]=[
   {
     "name": "GS 편의점",
     "menu": "메뉴 : 과자, 음료, 잡화 등",
@@ -118,7 +119,7 @@ const list4=[
     "place": "위치 : 광장 1층"
   }
 ];
-const list5=[
+list[4]=[
   {
     "name": "프레시에또",
     "menu": "메뉴 : 커피, 샌드위치 등",

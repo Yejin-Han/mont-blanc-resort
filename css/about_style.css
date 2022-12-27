@@ -10,17 +10,41 @@ h3{ font-size: 42px; text-align: center; }
 #top{ background-image: url('../img/top/bg_top1.jpg'); }
 /*=====top=====*/
 /*=====intro=====*/
+@keyframes appear{
+	0%{
+		opacity: 0;
+		transform: translateY(100%);
+	}
+	100%{
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+@keyframes appear_bar{
+	0%{
+		opacity: 0;
+		transform: translateX(-50%) translateY(100%);
+	}
+	100%{
+		opacity: 1;
+		transform: translateX(-50%) translateY(0);
+	}
+}
 #intro{
 	padding: 10% 0;
 	background: url('../img/sub/bg_intro-d.jpg') no-repeat 0 0/cover;
 }
 #intro .content_header{ /* 스크립트로 h3의 너비를 받아서 지정하기 */ width: 325px; margin: 0 auto; }
-#intro .content_header>h3{ font-family: 'Montserrat', sans-serif; text-align: center; }
+#intro .content_header>h3{
+	font-family: 'Montserrat', sans-serif; text-align: center;
+	opacity: 0; transform: translateY(100%);
+}
 #intro .content_header>p{
 	text-align: right;
 	font-size: 20px; color: var(--txt-color);
 	margin-bottom: 130px;
 	position: relative;
+	opacity: 0; transform: translateY(100%);
 }
 #intro .content_header>p::after{
 	display: block;
@@ -28,16 +52,71 @@ h3{ font-size: 42px; text-align: center; }
 	width: 52px; height: 1px;
 	background: #333;
 	position: absolute; left: 50%; bottom: -65px;
-	transform: translateX(-50%);
+	opacity: 0; transform: translateX(-50%) translateY(100%);
 }
 #intro .content_bottom{
 	text-align: center;
 	letter-spacing: -1px; color: var(--txt-color);
 }
-#intro .content_bottom>h4{ font-size: 20px; margin-bottom: 30px; }
-#intro .content_bottom>p{ line-height: 1.6em; }
+#intro .content_bottom>h4{
+	font-size: 20px; margin-bottom: 30px;
+	opacity: 0; transform: translateY(100%);
+}
+#intro .content_bottom>p{
+	line-height: 1.6em;
+	opacity: 0; transform: translateY(100%);
+}
+#intro.active .content_header>h3{
+	animation: appear 0.5s 0s 1 ease-out normal both;
+}
+#intro.active .content_header>p{
+	animation: appear 0.5s 0.1s 1 ease-out normal both;
+}
+#intro.active .content_header>p::after{
+	animation: appear_bar 0.5s 0.2s 1 ease-out normal both;
+}
+#intro.active .content_bottom>h4{
+	animation: appear 0.5s 0.3s 1 ease-out normal both;
+}
+#intro.active .content_bottom>p{
+	animation: appear 0.5s 0.4s 1 ease-out normal both;
+}
 /*=====intro=====*/
 /*=====strength=====*/
+@keyframes slideToR{
+	0%{
+		opacity: 0;
+		transform: translateX(-100%);
+	}
+	100%{
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+@keyframes slideToL{
+	0%{
+		opacity: 0;
+		transform: translateX(100%);
+	}
+	100%{
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+@keyframes appearImg{
+	0%{
+		opacity: 0;
+		transform: translateY(10%);
+	}
+	100%{
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+#strength>div.active h4{ animation: slideToR 0.5s 0s 1 ease-out normal both; }
+#strength>div.active p{ animation: slideToR 0.5s 0.1s 1 ease-out normal both; }
+#strength>.s2.active h4,#strength>.s2.active p{ animation-name: slideToL; }
+#strength>div.active .img_wrap{ animation: appearImg 0.5s 0.05s 1 ease-out normal both; }
 #strength>div{ padding: 5% 0; }
 #strength>.s2{ background: var(--dominant-color1); }
 #strength .innerbox{
@@ -55,21 +134,23 @@ h3{ font-size: 42px; text-align: center; }
 #strength h4{
 	font-family: 'Gmarket Sans', sans-serif; font-size: 24px;
 	margin-bottom: 40px;
+	opacity: 0;
 }
 #strength p{
 	line-height: 1.8em; font-size: 1rem;
 	background: none; transform: none;
 	position: relative;
+	opacity: 0;
 }
 #strength p::after{
 	display: block;
 	content: '';
 	width: 150%; height: 1px;
 	background: #333;
-	position: absolute; left: 0; top: -18px;
+	position: absolute; left: 0; top: -18px; z-index: 10000;
 }
 #strength>.s2 p::after{ right: 0; left: auto; }
-#strength .img_wrap{ max-width: 556px; width: 100%; }
+#strength .img_wrap{ max-width: 556px; width: 100%; opacity: 0; transform: translateY(10%); }
 #strength .img_wrap>img{
 	width: 100%; height: auto;
 	border-radius: 50px;
