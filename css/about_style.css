@@ -113,10 +113,6 @@ h3{ font-size: 42px; text-align: center; }
 		transform: translateY(0);
 	}
 }
-#strength>div.active h4{ animation: slideToR 0.5s 0s 1 ease-out normal both; }
-#strength>div.active p{ animation: slideToR 0.5s 0.1s 1 ease-out normal both; }
-#strength>.s2.active h4,#strength>.s2.active p{ animation-name: slideToL; }
-#strength>div.active .img_wrap{ animation: appearImg 0.5s 0.05s 1 ease-out normal both; }
 #strength>div{ padding: 5% 0; }
 #strength>.s2{ background: var(--dominant-color1); }
 #strength .innerbox{
@@ -155,6 +151,10 @@ h3{ font-size: 42px; text-align: center; }
 	width: 100%; height: auto;
 	border-radius: 50px;
 }
+#strength>div.active h4{ animation: slideToR 0.5s 0s 1 ease-out normal both; }
+#strength>div.active p{ animation: slideToR 0.5s 0.1s 1 ease-out normal both; }
+#strength>.s2.active h4,#strength>.s2.active p{ animation-name: slideToL; }
+#strength>div.active .img_wrap{ animation: appearImg 0.5s 0.05s 1 ease-out normal both; }
 /*=====strength=====*/
 
 @media screen and (max-width: 1024px) and (min-width: 769px){
@@ -187,8 +187,9 @@ h3{ font-size: 42px; text-align: center; }
 	#strength>.s2>.innerbox{ text-align: left; }
 	#strength .text_wrap{ width: 100%; }
 	#strength h4{ font-size: 20px; }
+	#strength>.s2 h4{ text-align: right; }
 	#strength p{
-		position: absolute; left: 50%; bottom: 20px;
+		position: absolute; left: 50%; bottom: 20px; z-index: 1000;
 		width: calc(85% - 20px); height: calc(90% - 80px);
 		line-height: 1.6em;
 		padding: 2% 3%;
@@ -199,4 +200,9 @@ h3{ font-size: 42px; text-align: center; }
 	#strength>.s2 p::after{ right: -46px; }
 	#strength .img_wrap{ margin: 0 auto; }
 	#strength .img_wrap>img{ border-radius: 25px; }
+	#strength>div.active h4{ animation: appear 0.5s 0s 1 ease-out normal both; }
+	#strength>div.active p::after{ animation: appear 0.5s 0s 1 ease-out normal both; }
+	#strength>div.active p{ animation: appear_bar 0.5s 0.1s 1 ease-out normal both; }
+	#strength>.s2.active h4{ animation-name: appear; }
+	#strength>.s2.active p{ animation-name: appear_bar; }
 }
