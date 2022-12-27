@@ -119,7 +119,7 @@ h2{ font-size: 42px; }
 	margin-top: 19px; text-align: center;
 	color: var(--txt-color);
 }
-#q_btns>ul>li.appear{ animation: btn_wave 0.8s 0s 1 cubic-bezier(.35,.05,.56,1.31) normal both; }
+#q_btns>ul>li.appear{ animation: btn_wave 0.8s 0s 1 cubic-bezier(.44,-0.32,.71,1.2) normal both; }
 #q_btns>ul>li:nth-child(1).appear{
 	animation-delay: 0s;
 }
