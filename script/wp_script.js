@@ -9,4 +9,3 @@ if(matchMedia('screen and (max-width: 768px)').matches){
     elem.setAttribute('data-aos','fade-up');
   });
 }
-  

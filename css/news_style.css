@@ -82,6 +82,30 @@
 	position: relative; left: 50%; transform: translateX(-50%);
 }
 .notice-table .tal{ text-align: left;}
+.popup{
+	background: #fff;
+	width: 80vw; height: 70vh;
+	border: 1px solid var(--main-color1);
+	position: fixed; left: 50%; top: 50%; z-index: 1000;
+	transform: translate(-50%,-50%);
+	overflow-y: scroll; box-shadow: 4px 4px 6px 0 rgba(0,0,0,0.1);
+	transition: all 0.4s;
+	opacity: 0; display: none;
+}
+.popup.active{ opacity: 1; display: block; }
+.popup>.close_btn{
+	display: block;
+	text-indent: -9999px;
+	width: 28px; height: 28px; padding: 2px;
+	background: transparent url('../img/sub/icon_close.png') no-repeat center center;
+	position: fixed; right: 3%; top: 5%; z-index: 1002;
+	cursor: pointer;
+}
+.popup>.content_area{
+	width: 90%; height: 90%;
+	position: absolute; left: 50%; top: 50%; z-index: 1001;
+	transform: translate(-50%,-50%);
+}
 
 /*=====notice_wrap=====*/
 

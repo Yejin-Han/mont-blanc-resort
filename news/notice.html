@@ -64,18 +64,16 @@
 				<div class="content_wrapper">
 					<p class="d">총 <span class="curr_num">20</span> 건</p>
 					<ul class="mini_tab">
-						<li><a href="#">전체</a></li>
-						<li><a href="#">안내</a></li>
-						<li><a href="#">대회</a></li>
-						<li><a href="#">채용정보</a></li>
-						<li><a href="#">보도자료</a></li>
+						<li><a href="#" data-value="all">전체</a></li>
+						<li><a href="#" data-value="점검안내">점검안내</a></li>
+						<li><a href="#" data-value="운영안내">운영안내</a></li>
+						<li><a href="#" data-value="대회">대회</a></li>
 					</ul>
 					<select id="table_classification" class="t m">
-						<option value="all" selected>전체</option>
-						<option value="guide">안내</option>
-						<option value="contest">대회</option>
-						<option value="employment">채용정보</option>
-						<option value="press">보도자료</option>
+						<option value="all" data-value="all">전체</option>
+						<option value="maintenance" data-value="점검안내">점검안내</option>
+						<option value="manage" data-value="운영안내">운영안내</option>
+						<option value="contest" data-value="대회">대회</option>
 					</select>
 				</div>
 				<table>
@@ -88,69 +86,13 @@
 							<th>등록일</th>
 						</tr>
 					</thead>
-					<tbody>
-						<tr>
-							<td><span class="mega">공지</span></td>
-							<td>안내</td>
-							<td class="tal"><a href="#">2022년 회원 객실이용 및 요금안내</a></td>
-							<td>2022.02.07</td>
-						</tr>
-						<tr>
-							<td><span class="mega">공지</span></td>
-							<td>안내</td>
-							<td class="tal"><a href="#">[스키월드] 운영 안내</a></td>
-							<td>2022.12.06</td>
-						</tr>
-						<tr>
-							<td>18</td>
-							<td>안내</td>
-							<td class="tal"><a href="#">22/23 스키월드 오픈 안내</a></td>
-							<td>2022.11.29</td>
-						</tr>
-						<tr>
-							<td>17</td>
-							<td>안내</td>
-							<td class="tal"><a href="#">22/23 스키월드 오픈 연기 안내</a></td>
-							<td>2022.11.21</td>
-						</tr>
-						<tr>
-							<td>16</td>
-							<td>안내</td>
-							<td class="tal"><a href="#">[관광곤돌라] 긴급 휴장 안내</a></td>
-							<td>2022.11.18</td>
-						</tr>
-						<tr>
-							<td>15</td>
-							<td>안내</td>
-							<td class="tal"><a href="#">22/23 동계시즌 객실추첨 결과 안내</a></td>
-							<td>2022.10.13</td>
-						</tr>
-						<tr>
-							<td>14</td>
-							<td>안내</td>
-							<td class="tal"><a href="#">22/23 동계시즌 객실추첨 안내</a></td>
-							<td>2022.09.21</td>
-						</tr>
-						<tr>
-							<td>13</td>
-							<td>안내</td>
-							<td class="tal"><a href="#">[11월1일~17일] 관광곤돌라 점검기간 휴장안내</a></td>
-							<td>2022.08.07</td>
-						</tr>
-						<tr>
-							<td>12</td>
-							<td>안내</td>
-							<td class="tal"><a href="#">게임센터 휴장 안내</a></td>
-							<td>2022.06.20</td>
-						</tr>
-						<tr>
-							<td>11</td>
-							<td>안내</td>
-							<td class="tal"><a href="#">키즈 플레이라운지 리뉴얼 공사 관련 휴장 안내</a></td>
-							<td>2022.03.26</td>
-						</tr>
-					</tbody>
+					<tbody></tbody>
+					<tfoot></tfoot>
 				</table>
+				<div class="popup">
+					<button type="button" class="close_btn">close button</button>
+					<div class="content_area"></div>
+				</div>
 			</div>
 		</section>
 		<hr>
@@ -159,5 +101,53 @@
 		</footer>
 		<script src="../script/header_footer.js"></script>
 		<script src="../script/top.js"></script>
+		<script>
+			let choice='all';
+			fetch("../data/notice_list.json")
+				.then((response)=>response.json())
+				.then((notice_list)=>{
+					let num=notice_list.noticeList.length;
+					for(let i=0; i<notice_list.noticeList.length; i++){
+						document.querySelector('tbody').innerHTML+='<tr>'+'<td>'+num+'</td>'+'<td>'+notice_list.noticeList[i].category+'</td>'+'<td class="tal"><a href="#">'+notice_list.noticeList[i].title+'</a></td>'+'<td>'+notice_list.noticeList[i].date+'</td>'+'</tr>';
+						num--;
+					}
+					const tabList=document.querySelectorAll('.mini_tab>li>a');
+					tabList.forEach(elem=>{
+						elem.addEventListener('click',function(e){
+							e.preventDefault();
+							document.querySelector('tbody').textContent='';
+							choice=this.getAttribute('data-value');
+							for(let i=0; i<notice_list.noticeList.length; i++){
+								if(choice=='all'){
+									num=notice_list.noticeList.length;
+									document.querySelector('tbody').innerHTML+='<tr>'+'<td>'+num+'</td>'+'<td>'+notice_list.noticeList[i].category+'</td>'+'<td class="tal"><a href="#">'+notice_list.noticeList[i].title+'</a></td>'+'<td>'+notice_list.noticeList[i].date+'</td>'+'</tr>';
+									num--;
+								} else{
+									if(notice_list.noticeList[i].category==choice){
+										num=notice_list.noticeList.length;
+										document.querySelector('tbody').innerHTML+='<tr>'+'<td>'+num+'</td>'+'<td>'+notice_list.noticeList[i].category+'</td>'+'<td class="tal"><a href="#">'+notice_list.noticeList[i].title+'</a></td>'+'<td>'+notice_list.noticeList[i].date+'</td>'+'</tr>';
+										num--;
+									}
+								}
+							}
+						});
+					});
+					const contents=document.querySelectorAll('tbody>tr>td>a');
+					const popup=document.querySelector('.popup');
+					const popup_area=popup.querySelector('.content_area');
+					const close=popup.querySelector('.close_btn');
+					contents.forEach(elem=>{
+						elem.addEventListener('click',function(e){
+							e.preventDefault();
+							popup_area.innerHTML=notice_list.noticeList[this.parentNode.parentNode.rowIndex-1].content;
+							popup.classList.add('active');
+						});
+					});
+					close.addEventListener('click',()=>{
+						popup.classList.remove('active');
+					});
+				})
+				.catch((error)=>console.log(error));
+		</script>
 	</body>
 </html>
