@@ -14,6 +14,18 @@
 #wp_map>img{ width: 100%; height: auto; }
 /*=====wp_map=====*/
 /*=====strength=====*/
+@keyframes fadeUp{
+	0%{ opacity: 0; top: 100px; }
+	100%{ opacity: 1; top: 0; }
+}
+@keyframes fadeToLeft{
+	0%{ opacity: 0; right: 100px; }
+	100%{ opacity: 1; right: 0; }
+}
+@keyframes fadeToRight{
+	0%{ opacity: 0; left: 100px; }
+	100%{ opacity: 1; left: 0; }
+}
 #strength{
 	padding: 13% 0;
 	background: url('../img/sub/bg_wp-d.png') no-repeat center center/cover;
@@ -42,25 +54,47 @@
 #strength .text_wrap{ width: 60%; }
 #strength h4{
 	font-family: 'Gmarket Sans', sans-serif; font-size: 24px;
-	margin-bottom: 40px;
-	position: static;
+	margin-bottom: 40px; opacity: 0;
+	position: relative; top: 0;
 }
 #strength p{
 	line-height: 1.8em; font-size: 1rem;
 	color: var(--txt-color);
-	background: none; /* transform: none; */
-	position: relative; z-index: 10000;
+	background: none; transform: none; opacity: 0;
+	position: relative; z-index: 1000; top: 0;
 }
+#strength .s1 h4,#strength .s3 h4{ left: 0; }
+#strength .s2 h4,#strength .s4 h4{ right: 0; }
+#strength .s1 p,#strength .s3 p{ left: 0; }
+#strength .s2 p,#strength .s4 p{ right: 0; }
 #strength p::after{
 	display: block;
 	content: '';
 	width: 150%; height: 1px;
 	background: #333;
-	position: absolute; left: 0; top: -18px;
+	position: absolute; left: 0; top: -18px; z-index: 1001;
 }
 #strength .s1 p::after,#strength .s3 p::after{ right: 0; left: auto; }
-#strength .img_wrap{ max-width: 480px; width: 100%; }
+#strength .img_wrap{
+	max-width: 480px; width: 100%;
+	position: relative; left: 0; top: 0; opacity: 0;
+}
 #strength .img_wrap>img{ width: 100%; height: auto; }
+#strength .s1.active h4,#strength .s3.active h4{
+	animation: fadeToRight 1s 0.1s 1 ease-out normal both;
+}
+#strength .s2.active h4,#strength .s4.active h4{
+	animation: fadeToLeft 1s 0.1s 1 ease-out normal both;
+}
+#strength .s1.active p,#strength .s3.active p{
+	animation: fadeToRight 1s 0.2s 1 ease-out normal both;
+}
+#strength .s2.active p,#strength .s4.active p{
+	animation: fadeToLeft 1s 0.2s 1 ease-out normal both;
+}
+#strength .s.active .img_wrap{
+	animation: fadeUp 0.5s 0s 1 ease-out normal both;
+}
 /*=====strength=====*/
 /*=====current=====*/
 #current{ margin-bottom: 9%; }
@@ -178,6 +212,18 @@
 	.innerbox{ width: 90%; }
 	#wp_map.innerbox{ width: 100%; }
 	#wp_map{ padding-top: 18%; }
+	@keyframes fadeUp_h4{
+		0%{ opacity: 0; top: 160px; }
+		100%{ opacity: 1; top: 80px; }
+	}
+	@keyframes fadeUp_p{
+		0%{ opacity: 0; bottom: 0px; }
+		100%{ opacity: 1; bottom: 80px; }
+	}
+	@keyframes fadeUp_img{
+		0%{ opacity: 0; top: 20%; }
+		100%{ opacity: 1; top: 0; }
+	}
 	#strength h3::after{ width: 45px; }
 	#strength .s{ display: block; gap: 0; }
 	#strength .s1,#strength .s3{ text-align: left; }
@@ -198,17 +244,36 @@
 			-1px  1px 0 var(--main-color1),
 			-1px  0   0 var(--main-color1);
 	}
+	#strength .s1 h4,#strength .s3 h4{ left: 50%; }
+	#strength .s2 h4,#strength .s4 h4{ left: 50%; right: auto; }
 	#strength p{
-		position: absolute; left: 50%; bottom: 80px; z-index: 100;
 		width: calc(85% - 20px); height: 40%;
+		position: absolute; left: 50%; top: auto; bottom: 80px; z-index: 100;
 		line-height: 1.6em;
 		padding: 2% 3%;
 		background: rgba(255,255,255,0.7);
 		transform: translate3d(-50%,0,0);
 	}
+	#strength .s1 p,#strength .s3 p{ left: 50%; }
+	#strength .s2 p,#strength .s4 p{ left: 50%; right: auto; }
 	#strength p::after{ width: 80%; left: -14%; }
 	#strength .s1 p::after,#strength .s3 p::after{ right: -14%; }
 	#strength .img_wrap{ margin: 0 auto; }
+	#strength .s1.active h4,#strength .s3.active h4{
+		animation: fadeUp_h4 1s 0s 1 ease-out normal both;
+	}
+	#strength .s2.active h4,#strength .s4.active h4{
+		animation: fadeUp_h4 1s 0s 1 ease-out normal both;
+	}
+	#strength .s1.active p,#strength .s3.active p{
+		animation: fadeUp_p 1s 0.2s 1 ease-out normal both;
+	}
+	#strength .s2.active p,#strength .s4.active p{
+		animation: fadeUp_p 1s 0.2s 1 ease-out normal both;
+	}
+	#strength .s.active .img_wrap{
+		animation: none;
+	}
 
 	#current{ margin-bottom: 20%; }
 	.table-in{
