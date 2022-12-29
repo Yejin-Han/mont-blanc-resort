@@ -4,11 +4,6 @@ const _tabInner=dining.querySelector('.restaurant');
 let tabInner=dining.querySelector('.restaurant_wrap');
 let rIndex=0;
 let listIndex=0;
-/* let rTitle=tabInner.querySelectorAll('h4');
-let rMenu=tabInner.querySelectorAll('.menu');
-let rImg=tabInner.querySelectorAll('img');
-let rTime=tabInner.querySelectorAll('.time');
-let rPlace=tabInner.querySelectorAll('.place'); */
 //처음 기본
 for(let i=0; i<list[0].length; i++){
   tabInner.appendChild(_tabInner.cloneNode(true));

@@ -50,15 +50,6 @@ const noticeSlide=()=>{
   noticeList[noticeIndex].style.opacity='1';
 }
 setInterval(noticeSlide,5000);
-/* let xhr=new XMLHttpRequest();
-xhr.open('POST','파일이름');
-xhr.onreadystatechange=()=>{
-  if(xhr.readyState===4 && xhr.status===200){
-    const _json=xhr.responseText;
-    const json=JSON.parse(_json);
-    console.log(json);
-  }
-} */
 
 //q_btns appear animation
 document.addEventListener('scroll',()=>{

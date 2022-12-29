@@ -66,11 +66,16 @@
 .restaurant_wrap>.restaurant>.content_bottom .time{ margin-bottom: 10px; }
 /*=====dining_list=====*/
 /*=====popup=====*/
+@keyframes fadein{
+	0%{ opacity: 0; }
+	100%{ opacity: 1; }
+}
 #popup{
 	width: 100%;
 	position: relative;
-	display: none;
+	display: none; opacity: 0;
 }
+#popup.active{ display: block; animation: fadein .4s 0s 1 normal both; }
 .popup_bg{
 	width: 100vw; height: 100vh;
 	background: rgba(0,0,0,0.7);

@@ -103,6 +103,12 @@ gnb_li.forEach(li=>{
 	});
 });
 
+//gotoback button
+/* const back=document.querySelector('.back');
+back.onclick=()=>{
+	history.back(); //history.go(-1);
+} */
+
 //resize
 window.addEventListener('resize',()=>{
 	if(window.matchMedia('screen and (min-width: 1025px)').matches){

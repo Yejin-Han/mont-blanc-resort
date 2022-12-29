@@ -168,6 +168,16 @@ h3{ font-size: 42px; text-align: center; }
 	#strength .text_wrap{ width: 60%; }
 }
 @media screen and (max-width: 768px){
+	@keyframes appear_bar2{
+		0%{
+			opacity: 0;
+			transform: translateX(-50%) translateY(20%);
+		}
+		100%{
+			opacity: 1;
+			transform: translateX(-50%) translateY(0);
+		}
+	}
 	#intro{
 		padding: 50% 0;
 		background-image: url('../img/sub/bg_intro-m.jpg');
@@ -201,8 +211,7 @@ h3{ font-size: 42px; text-align: center; }
 	#strength .img_wrap{ margin: 0 auto; }
 	#strength .img_wrap>img{ border-radius: 25px; }
 	#strength>div.active h4{ animation: appear 0.5s 0s 1 ease-out normal both; }
-	#strength>div.active p::after{ animation: appear 0.5s 0s 1 ease-out normal both; }
-	#strength>div.active p{ animation: appear_bar 0.5s 0.1s 1 ease-out normal both; }
+	#strength>div.active p{ animation: appear_bar2 0.5s 0.1s 1 ease-out normal both; }
 	#strength>.s2.active h4{ animation-name: appear; }
-	#strength>.s2.active p{ animation-name: appear_bar; }
+	#strength>.s2.active p{ animation-name: appear_bar2; }
 }

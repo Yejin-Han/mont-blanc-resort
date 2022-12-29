@@ -13,7 +13,7 @@ const scroll=()=>{
   const _checkPosition=()=>{
     items.forEach(elem=>{
       let posFromTop=elem.getBoundingClientRect().top;
-      if(winH>posFromTop+100){
+      if(winH>posFromTop+winH/2){
         elem.classList.add('active');
       }
     });

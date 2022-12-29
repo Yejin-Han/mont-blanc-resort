@@ -121,24 +121,6 @@ h2{ font-size: 42px; }
 	color: var(--txt-color);
 }
 #q_btns>ul>li.appear{ animation: btn_wave 0.8s 0s 1 cubic-bezier(.44,-0.32,.71,1.2) normal both; }
-#q_btns>ul>li:nth-child(1).appear{
-	animation-delay: 0s;
-}
-#q_btns>ul>li:nth-child(2).appear{
-	animation-delay: 0.2s;
-}
-#q_btns>ul>li:nth-child(3).appear{
-	animation-delay: 0.4s;
-}
-#q_btns>ul>li:nth-child(4).appear{
-	animation-delay: 0.6s;
-}
-#q_btns>ul>li:nth-child(5).appear{
-	animation-delay: 0.8s;
-}
-#q_btns>ul>li:nth-child(6).appear{
-	animation-delay: 1s;
-}
 /*=====section2:q_btns=====*/
 /*=====section3:slope=====*/
 #slope{
@@ -195,7 +177,24 @@ h2{ font-size: 42px; }
 /*=====section4:promotion=====*/
 
 @media screen and (min-width: 1025px){
-
+	#q_btns>ul>li:nth-child(1).appear{
+		animation-delay: 0s;
+	}
+	#q_btns>ul>li:nth-child(2).appear{
+		animation-delay: 0.2s;
+	}
+	#q_btns>ul>li:nth-child(3).appear{
+		animation-delay: 0.4s;
+	}
+	#q_btns>ul>li:nth-child(4).appear{
+		animation-delay: 0.6s;
+	}
+	#q_btns>ul>li:nth-child(5).appear{
+		animation-delay: 0.8s;
+	}
+	#q_btns>ul>li:nth-child(6).appear{
+		animation-delay: 1s;
+	}
 }
 @media screen and (max-width: 1024px) and (min-width: 769px){
 	.innerbox{ width: 100%; }
@@ -225,6 +224,24 @@ h2{ font-size: 42px; }
 	#q_btns>ul{ height: 398px; }
 	#q_btns>ul>li{ width: 145px; height: 175px; }
 	#q_btns>ul>li>a>.circle{ width: 145px; height: 137px; }
+	#q_btns>ul>li:nth-child(1).appear{
+		animation-delay: 0s;
+	}
+	#q_btns>ul>li:nth-child(2).appear{
+		animation-delay: 0.2s;
+	}
+	#q_btns>ul>li:nth-child(3).appear{
+		animation-delay: 0.4s;
+	}
+	#q_btns>ul>li:nth-child(4).appear{
+		animation-delay: 0s;
+	}
+	#q_btns>ul>li:nth-child(5).appear{
+		animation-delay: 0.2s;
+	}
+	#q_btns>ul>li:nth-child(6).appear{
+		animation-delay: 0.4s;
+	}
 	/*=====section2:q_btns=====*/
 	/*=====section3:slope=====*/
 	#slope{ background-image: url('../img/main/bg_sect3-t.jpg'); }
@@ -297,6 +314,24 @@ h2{ font-size: 42px; }
 	#q_btns>ul>li{ width: 91px; height: 108px; }
 	#q_btns>ul>li>a>.circle{ width: 87px; height: 82px; }
 	#q_btns>ul>li>a>.txt{ font-size: 14px; letter-spacing: -1px; margin-top: 10px; }
+	#q_btns>ul>li:nth-child(1).appear{
+		animation-delay: 0s;
+	}
+	#q_btns>ul>li:nth-child(2).appear{
+		animation-delay: 0.2s;
+	}
+	#q_btns>ul>li:nth-child(3).appear{
+		animation-delay: 0.4s;
+	}
+	#q_btns>ul>li:nth-child(4).appear{
+		animation-delay: 0s;
+	}
+	#q_btns>ul>li:nth-child(5).appear{
+		animation-delay: 0.2s;
+	}
+	#q_btns>ul>li:nth-child(6).appear{
+		animation-delay: 0.4s;
+	}
 	/*=====section2:q_btns=====*/
 	/*=====section3:slope=====*/
 	#slope{ background-image: url('../img/main/bg_sect3-m.jpg'); padding: 12% 0;}
