@@ -8,12 +8,12 @@ let listIndex=0;
 for(let i=0; i<list[0].length; i++){
   tabInner.appendChild(_tabInner.cloneNode(true));
   let rTitle=tabInner.querySelectorAll('h4');
-  let rMenu=tabInner.querySelectorAll('.menu');
+  let rMain=tabInner.querySelectorAll('.main');
   let rImg=tabInner.querySelectorAll('img');
   let rTime=tabInner.querySelectorAll('.time');
   let rPlace=tabInner.querySelectorAll('.place');
   rTitle[i].innerHTML=list[0][i].name;
-  rMenu[i].innerHTML=list[0][i].menu;
+  rMain[i].innerHTML=list[0][i].main;
   rImg[i].src=`../img/sub/${list[0][i].img}.jpg`;
   rTime[i].innerHTML=list[0][i].time;
   rPlace[i].innerHTML=list[0][i].place;
@@ -33,12 +33,12 @@ tabItem.forEach((tab,idx)=>{
         for(let i=0; i<list[0].length; i++){
           tabInner.appendChild(_tabInner.cloneNode(true));
           let rTitle=tabInner.querySelectorAll('h4');
-          let rMenu=tabInner.querySelectorAll('.menu');
+          let rMain=tabInner.querySelectorAll('.main');
           let rImg=tabInner.querySelectorAll('img');
           let rTime=tabInner.querySelectorAll('.time');
           let rPlace=tabInner.querySelectorAll('.place');
           rTitle[i].innerHTML=list[0][i].name;
-          rMenu[i].innerHTML=list[0][i].menu;
+          rMain[i].innerHTML=list[0][i].main;
           rImg[i].src=`../img/sub/${list[0][i].img}.jpg`;
           rTime[i].innerHTML=list[0][i].time;
           rPlace[i].innerHTML=list[0][i].place;
@@ -49,12 +49,12 @@ tabItem.forEach((tab,idx)=>{
         for(let i=0; i<list[1].length; i++){
           tabInner.appendChild(_tabInner.cloneNode(true));
           let rTitle=tabInner.querySelectorAll('h4');
-          let rMenu=tabInner.querySelectorAll('.menu');
+          let rMain=tabInner.querySelectorAll('.main');
           let rImg=tabInner.querySelectorAll('img');
           let rTime=tabInner.querySelectorAll('.time');
           let rPlace=tabInner.querySelectorAll('.place');
           rTitle[i].innerHTML=list[1][i].name;
-          rMenu[i].innerHTML=list[1][i].menu;
+          rMain[i].innerHTML=list[1][i].main;
           rImg[i].src=`../img/sub/${list[1][i].img}.jpg`;
           rTime[i].innerHTML=list[1][i].time;
           rPlace[i].innerHTML=list[1][i].place;
@@ -65,12 +65,12 @@ tabItem.forEach((tab,idx)=>{
         for(let i=0; i<list[2].length; i++){
           tabInner.appendChild(_tabInner.cloneNode(true));
           let rTitle=tabInner.querySelectorAll('h4');
-          let rMenu=tabInner.querySelectorAll('.menu');
+          let rMain=tabInner.querySelectorAll('.main');
           let rImg=tabInner.querySelectorAll('img');
           let rTime=tabInner.querySelectorAll('.time');
           let rPlace=tabInner.querySelectorAll('.place');
           rTitle[i].innerHTML=list[2][i].name;
-          rMenu[i].innerHTML=list[2][i].menu;
+          rMain[i].innerHTML=list[2][i].main;
           rImg[i].src=`../img/sub/${list[2][i].img}.jpg`;
           rTime[i].innerHTML=list[2][i].time;
           rPlace[i].innerHTML=list[2][i].place;
@@ -81,12 +81,12 @@ tabItem.forEach((tab,idx)=>{
         for(let i=0; i<list[3].length; i++){
           tabInner.appendChild(_tabInner.cloneNode(true));
           let rTitle=tabInner.querySelectorAll('h4');
-          let rMenu=tabInner.querySelectorAll('.menu');
+          let rMain=tabInner.querySelectorAll('.main');
           let rImg=tabInner.querySelectorAll('img');
           let rTime=tabInner.querySelectorAll('.time');
           let rPlace=tabInner.querySelectorAll('.place');
           rTitle[i].innerHTML=list[3][i].name;
-          rMenu[i].innerHTML=list[3][i].menu;
+          rMain[i].innerHTML=list[3][i].main;
           rImg[i].src=`../img/sub/${list[3][i].img}.jpg`;
           rTime[i].innerHTML=list[3][i].time;
           rPlace[i].innerHTML=list[3][i].place;
@@ -97,12 +97,12 @@ tabItem.forEach((tab,idx)=>{
         for(let i=0; i<list[4].length; i++){
           tabInner.appendChild(_tabInner.cloneNode(true));
           let rTitle=tabInner.querySelectorAll('h4');
-          let rMenu=tabInner.querySelectorAll('.menu');
+          let rMain=tabInner.querySelectorAll('.main');
           let rImg=tabInner.querySelectorAll('img');
           let rTime=tabInner.querySelectorAll('.time');
           let rPlace=tabInner.querySelectorAll('.place');
           rTitle[i].innerHTML=list[4][i].name;
-          rMenu[i].innerHTML=list[4][i].menu;
+          rMain[i].innerHTML=list[4][i].main;
           rImg[i].src=`../img/sub/${list[4][i].img}.jpg`;
           rTime[i].innerHTML=list[4][i].time;
           rPlace[i].innerHTML=list[4][i].place;
@@ -114,5 +114,11 @@ tabItem.forEach((tab,idx)=>{
     } else{
       tabItem[idx].classList.remove('on');
     }
+  });
+});
+const more_btns=dining.querySelectorAll('.more_btn');
+more_btns.forEach(btn=>{
+  btn.addEventListener('click',function(){
+
   });
 });
