@@ -10,104 +10,15 @@
 		<meta name="mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<title>몽블랑 리조트</title>
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+		<script src="https://kit.fontawesome.com/b1825f18b6.js" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
 		<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 		<link rel="stylesheet" href="css/index_style.css">
 	</head>
 	<body>
 		<header id="main_header">
-			<!-- <? include("header.html") ?> -->
-			<h1><a href="#">MONT BLANC RESORT</a></h1>
-			<button type="button" class="toggle t m">
-				<span class="bar1"></span><span class="bar2"></span><span class="bar3"></span>
-				<span class="sr_only">전체메뉴</span>
-			</button>
-			<a href="javascript:history.back();" class="back t m">뒤로 가기</a>
-			<nav id="gnb">
-				<div class="innerbox">
-					<ul>
-						<li>
-							<a href="about/introduction.html"><span class="t m"></span>리조트 안내</a>
-							<div class="sub">
-								<ul>
-									<li><a href="about/introduction.html">몽블랑리조트 소개</a></li>
-									<li><a href="#">리조트 안내도</a></li>
-									<li><a href="#">이용안내</a></li>
-								</ul>
-							</div>
-						</li>
-						<li>
-							<a href="ski/slope.html"><span class="t m"></span>스키월드</a>
-							<div class="sub">
-								<ul>
-									<li><a href="ski/slope.html">슬로프 안내</a></li>
-									<li><a href="#">리프트 안내</a></li>
-									<li><a href="#">오픈현황</a></li>
-									<li><a href="#">라이브 캠</a></li>
-									<li><a href="#">눈썰매장</a></li>
-									<li><a href="#">패트롤</a></li>
-								</ul>
-							</div>
-						</li>
-						<li>
-							<a href="wp/guide.html"><span class="t m"></span>워터파크</a>
-							<div class="sub">
-								<ul>
-									<li><a href="wp/guide.html">이용안내</a></li>
-									<li><a href="#">메인시설</a></li>
-									<li><a href="#">편의시설</a></li>
-								</ul>
-							</div>
-						</li>
-						<li>
-							<a href="room/guide.html"><span class="t m"></span>객실</a>
-							<div class="sub">
-								<ul>
-									<li><a href="room/guide.html">이용안내</a></li>
-									<li><a href="#">가루눈동</a></li>
-									<li><a href="#">포슬눈동</a></li>
-									<li><a href="#">함박눈동</a></li>
-									<li><a href="#">객실 패키지</a></li>
-								</ul>
-							</div>
-						</li>
-						<li>
-							<a href="ex/dining.html"><span class="t m"></span>체험·휴식</a>
-							<div class="sub">
-								<ul>
-									<li><a href="ex/dining.html">다이닝</a></li>
-									<li><a href="#">액티비티</a></li>
-									<li><a href="#">부대시설</a></li>
-								</ul>
-							</div>
-						</li>
-						<li>
-							<a href="news/notice.html"><span class="t m"></span>리조트 소식</a>
-							<div class="sub">
-								<ul>
-									<li><a href="news/notice.html">공지사항</a></li>
-									<li><a href="#">이벤트</a></li>
-									<li><a href="#">FAQ</a></li>
-								</ul>
-							</div>
-						</li>
-					</ul>
-				</div>
-				<div class="weather_wrap d">
-					<span class="weather">맑음</span>
-					<span class="degree">-5&deg;</span>
-				</div>
-				<div class="sub_bg d"></div>
-			</nav>
-			<nav id="tnb">
-				<p class="t m">몽블랑리조트에 오신 것을 환영합니다.</p>
-				<ul>
-					<li><a href="#">로그인</a></li>
-					<li><a href="#">회원가입</a></li>
-					<li><a href="#">마이페이지</a></li>
-					<li><a href="#">사이트맵</a></li>
-				</ul>
-			</nav>
+			<? include("header.html") ?>
 		</header>
 		<hr>
 		<section id="main_visual">
@@ -135,6 +46,7 @@
 			</div>
 			<div class="info_wrap">
 				<div class="weather_wrap t m">
+					<i></i>
 					<span class="weather">맑음</span>
 					<span class="degree">-5&deg;</span>
 				</div>
@@ -230,53 +142,9 @@
 		</section>
 		<hr>
 		<footer id="main_footer">
-			<!-- <? include("footer.html") ?> -->
-			<div class="footer_wrap">
-				<div class="footer_1">
-					<h3><a href="#">MONT BLANC RESORT</a></h3>
-				</div>
-				<div class="footer_2">
-					<ul class="footer_menu">
-						<li><a href="#"><strong>개인정보처리방침</strong></a></li>
-						<li><a href="#">영상정보처리기기운영관리방침</a></li>
-						<li><a href="#">이메일무단수집거부</a></li>
-						<li><a href="#">서비스이용약관</a></li>
-					</ul>
-					<address>
-						<p>
-							<span>강원도 평창군 몽블랑면 몽블랑로 123</span>
-							<span>대표이사 : 한예진</span>
-							<br class="t m">
-							<span>사업장등록번호 : 123-45-67890</span>
-							<span>통신판매신고 : 제 2022-12호</span>
-						</p>
-						<p>
-							<span>고객센터 : 1577-1577(&num;0)</span>
-							<span>객실예약문의 : 1577-1588(&num;1)</span>
-							<span>분양/회원문의 : 1577-1599(&num;2)</span>
-						</p>
-					</address>
-				</div>
-				<div class="footer_3">
-					<div class="select_wrap">
-						<button type="button">Family Site<span>toggle icon</span></button>
-						<div class="family_sites">
-							<ul>
-								<li><a href="#">몽블랑 시즌권 구매</a></li>
-								<li><a href="#">몽블랑 스키하우스</a></li>
-								<li><a href="#">(주)몽블랑그룹</a></li>
-							</ul>
-						</div>
-					</div>
-					<ul class="sns">
-						<li><a href="#"><span>facebook</span></a></li>
-						<li><a href="#"><span>instagram</span></a></li>
-						<li><a href="#"><span>blog</span></a></li>
-					</ul>
-				</div>
-			</div>
-			<p class="copyright">COPYRIGHT &copy; MONT BLANC RESORT ALL RIGHT RESERVED.</p>
+			<? include("footer.html") ?>
 		</footer>
+		<script src="script/apikey.js"></script>
 		<script src="script/header_footer.js"></script>
 		<script src="script/index_script.js"></script>
 	</body>

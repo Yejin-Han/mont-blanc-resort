@@ -3,8 +3,12 @@ fetch("../data/notice_list.json")
 	.then((response)=>response.json())
 	.then((notice_list)=>{
 		let num=notice_list.noticeList.length;
+		for(let k=0; k<notice_list.noticeList.length; k++){			
+			notice_list.noticeList[k].id=num;
+			num--;
+		}
 		for(let i=0; i<notice_list.noticeList.length; i++){
-			document.querySelector('tbody').innerHTML+='<tr>'+'<td>'+num+'</td>'+'<td>'+notice_list.noticeList[i].category+'</td>'+'<td class="tal"><a href="#">'+notice_list.noticeList[i].title+'</a></td>'+'<td>'+notice_list.noticeList[i].date+'</td>'+'</tr>';
+			document.querySelector('tbody').innerHTML+='<tr>'+'<td>'+notice_list.noticeList[i].id+'</td>'+'<td>'+notice_list.noticeList[i].category+'</td>'+'<td class="tal"><a href="#">'+notice_list.noticeList[i].title+'</a></td>'+'<td>'+notice_list.noticeList[i].date+'</td>'+'</tr>';
 			num--;
 		}
 		const tabList=document.querySelectorAll('.mini_tab>li>a');
@@ -16,12 +20,12 @@ fetch("../data/notice_list.json")
 				for(let i=0; i<notice_list.noticeList.length; i++){
 					if(choice=='all'){
 						num=notice_list.noticeList.length;
-						document.querySelector('tbody').innerHTML+='<tr>'+'<td>'+num+'</td>'+'<td>'+notice_list.noticeList[i].category+'</td>'+'<td class="tal"><a href="#">'+notice_list.noticeList[i].title+'</a></td>'+'<td>'+notice_list.noticeList[i].date+'</td>'+'</tr>';
+						document.querySelector('tbody').innerHTML+='<tr>'+'<td>'+notice_list.noticeList[i].id+'</td>'+'<td>'+notice_list.noticeList[i].category+'</td>'+'<td class="tal"><a href="#">'+notice_list.noticeList[i].title+'</a></td>'+'<td>'+notice_list.noticeList[i].date+'</td>'+'</tr>';
 						num--;
 					} else{
 						if(notice_list.noticeList[i].category==choice){
 							num=notice_list.noticeList.length;
-							document.querySelector('tbody').innerHTML+='<tr>'+'<td>'+num+'</td>'+'<td>'+notice_list.noticeList[i].category+'</td>'+'<td class="tal"><a href="#">'+notice_list.noticeList[i].title+'</a></td>'+'<td>'+notice_list.noticeList[i].date+'</td>'+'</tr>';
+							document.querySelector('tbody').innerHTML+='<tr>'+'<td>'+notice_list.noticeList[i].id+'</td>'+'<td>'+notice_list.noticeList[i].category+'</td>'+'<td class="tal"><a href="#">'+notice_list.noticeList[i].title+'</a></td>'+'<td>'+notice_list.noticeList[i].date+'</td>'+'</tr>';
 							num--;
 						}
 					}

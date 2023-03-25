@@ -55,8 +55,7 @@ h2{ font-size: 42px; }
 	width: 137px; height: 192px;
 	position: absolute; top: 100px; right: 30px; z-index: 100;
 	/*right 좌표 스크립트로 손보기 - left를 window.width에서 일정% 뺀 좌표로*/
-	background: var(--accent-color3) url('../img/main/sun.png') no-repeat center top;
-	background-size: 100% auto;
+	background: var(--accent-color3);
 	box-sizing: border-box; padding-top: 152px;
 	display: flex; justify-content: space-around;
 	display: none !important;
@@ -73,16 +72,19 @@ h2{ font-size: 42px; }
 	font-family: 'IBM Plex Sans', sans-serif;
 	font-size: 20px;
 	color: #fff;
+	width: 20%;
 }
-.info_wrap>.notice_wrap .content_wrap
+.info_wrap>.notice_wrap>.slide_wrap{
+	width: 80%;
+}
 .info_wrap>.notice_wrap p{
-	width: 80%; opacity: 1;
+	width: 100%; opacity: 1;
 	display: flex; justify-content: space-between; align-items: center;
 	transition: all 0.2s;
 }
-.info_wrap>.notice_wrap>p:nth-of-type(2){ display: none; }
-.info_wrap>.notice_wrap>p>a{ display: block; padding: 5px 0; color: #fff; }
-.info_wrap>.notice_wrap>span{ flex: 1 1 0; color: #fff; text-align: right; }
+.info_wrap>.notice_wrap .content_wrap:nth-of-type(2)>p{ display: none; }
+.info_wrap>.notice_wrap p>a{ display: block; padding: 5px 20px 5px 0; color: #fff; }
+.info_wrap>.notice_wrap span{ flex: 1 1 0; color: #fff; text-align: right; }
 /*=====section1:main_visual=====*/
 /*=====section2:q_btns=====*/
 @keyframes btn_wave{ /*태블릿모바일 생각하기*/
@@ -208,15 +210,13 @@ h2{ font-size: 42px; }
 	.info_wrap>.weather_wrap{
 		flex: 2 1 0; height: 100%;
 		position: static;
-		background-position: left 47px center;
-		background-size: 87px 87px;
 		box-sizing: border-box; padding-top: 0; padding-left: 140px;
 		display: flex !important; align-items: center;
 	}
 	.info_wrap>.weather_wrap>.weather{ margin-top: 0; }
 	.info_wrap>.notice_wrap{ flex: 7 1 0; }
 	.info_wrap>.notice_wrap>h2{ margin-left: 20px; }
-	.info_wrap>.notice_wrap>p{ margin-right: 20px; }
+	.info_wrap>.notice_wrap p{ margin-right: 20px; }
 	/*=====section1:main_visual=====*/
 	/*=====section2:q_btns=====*/
 	#q_btns.innerbox{ width: 579px; }
@@ -294,8 +294,6 @@ h2{ font-size: 42px; }
 	.info_wrap>.weather_wrap{
 		flex: 2 1 0; height: 100%;
 		position: static;
-		background-position: left 20px center;
-		background-size: 45px 45px;
 		box-sizing: border-box; padding-top: 0; padding-left: 80px;
 		display: flex !important; align-items: center;
 	}
@@ -304,7 +302,10 @@ h2{ font-size: 42px; }
 	.info_wrap>.weather_wrap>.degree{ font-size: 20px; margin-right: 10px; }
 	.info_wrap>.notice_wrap{ flex: 7 1 0; }
 	.info_wrap>.notice_wrap>h2{ margin-left: 10px; font-size: 14px;}
-	.info_wrap>.notice_wrap>p>a{ font-size: 12px; }
+	.info_wrap>.notice_wrap p{
+		justify-content: right;
+	}
+	.info_wrap>.notice_wrap p>a{ font-size: 12px; }
 	/*=====section1:main_visual=====*/
 	/*=====section2:q_btns=====*/
 	#q_btns{ padding: 12% 0 13%; }

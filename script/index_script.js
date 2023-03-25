@@ -41,6 +41,8 @@ const noticeList=noticeWrap.querySelectorAll('p');
 const noticeDate=noticeWrap.querySelector('span'); */
 //fade가 적용이 안된다...
 let noticeIndex=0;
+noticeList[noticeIndex].style.display='flex';
+noticeList[noticeIndex+1].style.display='none';
 const noticeSlide=()=>{
   noticeList[noticeIndex].style.opacity='0';
   noticeList[noticeIndex].style.display='none';
