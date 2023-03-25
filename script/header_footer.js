@@ -9,8 +9,8 @@ const gnb_weather=gnb.querySelector('.weather_wrap');
 const info_weather=document.querySelector('.info_wrap>.weather_wrap');
 const gnb_descr=gnb_weather.querySelector('.weather');
 const info_descr=info_weather.querySelector('.weather');
-const gnb_icon=gnb_weather.querySelector('.icon');
-const info_icon=info_weather.querySelector('.icon');
+const gnb_icon=gnb_weather.querySelector('i');
+const info_icon=info_weather.querySelector('i');
 const gnb_deg=gnb_weather.querySelector('.degree');
 const info_deg=info_weather.querySelector('.degree');
 const tnb=document.querySelector('#tnb');
@@ -220,15 +220,15 @@ fetch(WEATHER_URL)
 				case '1':
 					gnb_descr.innerText="맑음";
 					info_descr.innerText="맑음";
-					gnb_icon.innerText='<i class="fa-solid fa-sun"></i>';
-					info_icon.innerText='<i class="fa-solid fa-sun"></i>';
+					gnb_icon.classList.add('fa-solid', 'fa-sun');
+					info_icon.classList.add('fa-solid', 'fa-sun');
 					break;
 				case '3':
 				case '4':
 					gnb_descr.innerText="흐림";
 					info_descr.innerText="흐림";
-					gnb_icon.innerText='<i class="fa-solid fa-cloud"></i>';
-					info_icon.innerText='<i class="fa-solid fa-cloud"></i>';
+					gnb_icon.classList.add('fa-solid', 'fa-cloud');
+					info_icon.classList.add('fa-solid', 'fa-cloud');
 					break;
 			}
 		} else{
@@ -237,22 +237,22 @@ fetch(WEATHER_URL)
 				case '5':
 					gnb_descr.innerText="비";
 					info_descr.innerText="비";
-					gnb_icon.innerText='<i class="fa-solid fa-umbrella"></i>';
-					info_icon.innerText='<i class="fa-solid fa-umbrella"></i>';
+					gnb_icon.classList.add('fa-solid', 'fa-umbrella');
+					info_icon.classList.add('fa-solid', 'fa-umbrella');
 					break;
 				case '2':
 				case '6':
 					gnb_descr.innerText="눈/비";
 					info_descr.innerText="눈/비";
-					gnb_icon.innerText='<i class="fa-solid fa-cloud-rain"></i>';
-					info_icon.innerText='<i class="fa-solid fa-cloud-rain"></i>';
+					gnb_icon.classList.add('fa-solid', 'fa-cloud-rain');
+					info_icon.classList.add('fa-solid', 'fa-cloud-rain');
 					break;
 				case '3':
 				case '7':
 					gnb_descr.innerText="눈";
 					info_descr.innerText="눈";
-					gnb_icon.innerText='<i class="fa-regular fa-snowflake"></i>';
-					info_icon.innerText='<i class="fa-regular fa-snowflake"></i>';
+					gnb_icon.classList.add('fa-regular', 'fa-snowflake');
+					info_icon.classList.add('fa-regular', 'fa-snowflake');
 					break;
 			}
 		}

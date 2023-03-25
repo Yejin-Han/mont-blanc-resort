@@ -56,16 +56,26 @@ h2{ font-size: 42px; }
 	position: absolute; top: 100px; right: 30px; z-index: 100;
 	/*right 좌표 스크립트로 손보기 - left를 window.width에서 일정% 뺀 좌표로*/
 	background: var(--accent-color3);
-	box-sizing: border-box; padding-top: 152px;
-	display: flex; justify-content: space-around;
 	display: none !important;
 }
-.info_wrap>.weather_wrap>span{ color: var(--txt-color); font-weight: bold; }
-.info_wrap>.weather_wrap>.weather{ font-size: 18px; margin-top: 6px; }
-.info_wrap>.weather_wrap>.degree{ font-size: 28px; }
+.info_wrap>.weather_wrap>.icon{
+	width: 45%;
+	height: 90%;
+	display: flex; justify-content: center; align-items: center;
+}
+.info_wrap>.weather_wrap>.icon>i{
+	font-size: 3em;
+	color: var(--txt-color);
+}
+.info_wrap>.weather_wrap span{ color: var(--txt-color); font-weight: bold; }
+.info_wrap>.weather_wrap>.description{
+	display: flex; align-items: center; justify-content: space-around;
+}
+.info_wrap>.weather_wrap .weather{ font-size: 18px; }
+.info_wrap>.weather_wrap .degree{ font-size: 28px; }
 .info_wrap>.notice_wrap{
 	width: 1024px; height: 100%;
-	display: flex; justify-content: space-between; align-items: center;
+	display: flex; justify-content: space-around; align-items: center;
 	overflow: hidden;
 }
 .info_wrap>.notice_wrap>h2{
@@ -84,7 +94,7 @@ h2{ font-size: 42px; }
 }
 .info_wrap>.notice_wrap .content_wrap:nth-of-type(2)>p{ display: none; }
 .info_wrap>.notice_wrap p>a{ display: block; padding: 5px 20px 5px 0; color: #fff; }
-.info_wrap>.notice_wrap span{ flex: 1 1 0; color: #fff; text-align: right; }
+.info_wrap>.notice_wrap span{ flex: 1 1 0; color: #fff; text-align: right; margin-right: 3%; }
 /*=====section1:main_visual=====*/
 /*=====section2:q_btns=====*/
 @keyframes btn_wave{ /*태블릿모바일 생각하기*/
@@ -210,10 +220,9 @@ h2{ font-size: 42px; }
 	.info_wrap>.weather_wrap{
 		flex: 2 1 0; height: 100%;
 		position: static;
-		box-sizing: border-box; padding-top: 0; padding-left: 140px;
-		display: flex !important; align-items: center;
+		display: flex !important; justify-content: space-around; align-items: center;
 	}
-	.info_wrap>.weather_wrap>.weather{ margin-top: 0; }
+	.info_wrap>.weather_wrap .weather{ margin-top: 0; }
 	.info_wrap>.notice_wrap{ flex: 7 1 0; }
 	.info_wrap>.notice_wrap>h2{ margin-left: 20px; }
 	.info_wrap>.notice_wrap p{ margin-right: 20px; }
@@ -294,12 +303,11 @@ h2{ font-size: 42px; }
 	.info_wrap>.weather_wrap{
 		flex: 2 1 0; height: 100%;
 		position: static;
-		box-sizing: border-box; padding-top: 0; padding-left: 80px;
-		display: flex !important; align-items: center;
+		display: flex !important; justify-content: space-around; align-items: center;
 	}
-	.info_wrap>.weather_wrap>.weather{ margin-top: 0; }
-	.info_wrap>.weather_wrap>.weather{ font-size: 12px; margin-top: 0; }
-	.info_wrap>.weather_wrap>.degree{ font-size: 20px; margin-right: 10px; }
+	.info_wrap>.weather_wrap .weather{ margin-top: 0; }
+	.info_wrap>.weather_wrap .weather{ font-size: 12px; margin-top: 0; }
+	.info_wrap>.weather_wrap .degree{ font-size: 20px; margin-right: 10px; }
 	.info_wrap>.notice_wrap{ flex: 7 1 0; }
 	.info_wrap>.notice_wrap>h2{ margin-left: 10px; font-size: 14px;}
 	.info_wrap>.notice_wrap p{

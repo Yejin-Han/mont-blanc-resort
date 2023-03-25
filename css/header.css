@@ -103,16 +103,27 @@ h1>a{
 	width: 137px; height: 192px;
 	position: absolute; top: 100px; right: 30px; z-index: 100;
 	/*right 좌표 스크립트로 손보기 - left를 window.width에서 일정% 뺀 좌표로*/
-	box-sizing: border-box; padding-top: 152px;
-	display: flex; justify-content: center;
+	display: flex; flex-flow: column wrap;	justify-content: center;
 	display: none !important; overflow: hidden;
 }
 #gnb .weather_wrap.active{
 	display: flex !important;
 }
-#gnb .weather_wrap>span{ color: #232323; font-weight: bold; }
-#gnb .weather_wrap>.weather{ font-size: 18px; margin-top: 6px; }
-#gnb .weather_wrap>.degree{ font-size: 28px; margin-left: 10px; }
+#gnb .weather_wrap>.icon{
+	width: 130px;
+	height: 120px;
+	display: flex; justify-content: center;
+}
+#gnb .weather_wrap>.icon>i{
+	font-size: 100px;
+	color: #232323;
+}
+#gnb .weather_wrap span{ color: #232323; font-weight: bold; }
+#gnb .weather_wrap>.description{
+	display: flex; align-items: center; justify-content: space-around;
+}
+#gnb .weather_wrap .weather{ font-size: 18px; }
+#gnb .weather_wrap .degree{ font-size: 28px; }
 #gnb .sub_bg{
 	width: 100%; height: 0;
 	background: #fff;
