@@ -1,18 +1,14 @@
 const header=document.querySelector('#main_header');
 const gnb=document.querySelector('#gnb');
-const gnb_ul=gnb.querySelector('.innerbox>ul');
-const gnb_li=gnb_ul.querySelectorAll('li');
-const gnb_li_a=document.querySelectorAll('#gnb>.innerbox>ul>li>a');
+const gnb_ul=gnb.querySelector('ul');
+const gnb_li=gnb.querySelectorAll('.innerbox>ul>li');
+const gnb_li_a=gnb.querySelectorAll('.innerbox>ul>li>a');
 const gnb_sub=gnb.querySelectorAll('.sub');
 const gnb_sub_bg=gnb.querySelector('.sub_bg');
 const gnb_weather=gnb.querySelector('.weather_wrap');
-const info_weather=document.querySelector('.info_wrap>.weather_wrap');
 const gnb_descr=gnb_weather.querySelector('.weather');
-const info_descr=info_weather.querySelector('.weather');
 const gnb_icon=gnb_weather.querySelector('i');
-const info_icon=info_weather.querySelector('i');
 const gnb_deg=gnb_weather.querySelector('.degree');
-const info_deg=info_weather.querySelector('.degree');
 const tnb=document.querySelector('#tnb');
 const toggle=header.querySelector('.toggle');
 const familySite=document.querySelector('.select_wrap>button');
@@ -28,24 +24,27 @@ header.addEventListener('mouseleave',()=>{
 });
 
 // desktop gnb pull down
-gnb_ul.addEventListener('mouseenter',()=>{
-	if(window.matchMedia('screen and (min-width: 1025px)').matches){
-		gnb_sub.forEach((sub)=>{
-			sub.classList.add('active');
-		});
-		gnb_weather.classList.add('active');
-		gnb_sub_bg.classList.add('active');
-	}
-});
-gnb_ul.addEventListener('mouseleave',()=>{
-	if(window.matchMedia('screen and (min-width: 1025px)').matches){
-		gnb_sub.forEach((sub)=>{
-			sub.classList.remove('active');
-		});
-		gnb_weather.classList.remove('active');
-		gnb_sub_bg.classList.remove('active');
-	}
-});
+const dt_gnb_func=()=>{
+	gnb_ul.addEventListener('mouseenter',()=>{
+		if(window.matchMedia('screen and (min-width: 1025px)').matches){
+			gnb_sub.forEach((sub)=>{
+				sub.classList.add('active');
+			});
+			gnb_weather.classList.add('active');
+			gnb_sub_bg.classList.add('active');
+		}
+	});
+	gnb_ul.addEventListener('mouseleave',()=>{
+		if(window.matchMedia('screen and (min-width: 1025px)').matches){
+			gnb_sub.forEach((sub)=>{
+				sub.classList.remove('active');
+			});
+			gnb_weather.classList.remove('active');
+			gnb_sub_bg.classList.remove('active');
+		}
+	});
+}
+dt_gnb_func();
 
 // scroll -> header/gnb fix
 window.addEventListener('scroll',()=>{
@@ -89,32 +88,49 @@ toggle.addEventListener('click',()=>{
 });
 
 //tablet,mobile accordion menu
-gnb_li.forEach(li=>{
-	li.addEventListener('click',(e)=>{
-		if(matchMedia("screen and (max-width: 1024px)").matches){
-			e.preventDefault();
-			const clicked_li=e.currentTarget;
-			if(clicked_li.querySelector('.sub').classList.contains('active')){
-				clicked_li.querySelector('a').classList.remove('active');
-				clicked_li.querySelector('.sub').classList.remove('active');
-			} else{
-				const nodes=[...clicked_li.parentElement.children];
-				nodes.forEach(elem=>{
-					elem.querySelector('a').classList.remove('active');
-					elem.querySelector('.sub').classList.remove('active');
-				});
-				clicked_li.querySelector('a').classList.add('active');
-				clicked_li.querySelector('.sub').classList.add('active');
+const t_m_gnb_func=()=>{
+	gnb_li.forEach(li=>{
+		li.addEventListener('click',(e)=>{
+			if(matchMedia("screen and (max-width: 1024px)").matches){
+				e.preventDefault();
+				const clicked_li=e.currentTarget;
+				if(clicked_li.querySelector('.sub').classList.contains('active')){
+					clicked_li.querySelector('a').classList.remove('active');
+					clicked_li.querySelector('.sub').classList.remove('active');
+				} else{
+					const nodes=[...clicked_li.parentElement.children];
+					nodes.forEach(elem=>{
+						elem.querySelector('a').classList.remove('active');
+						elem.querySelector('.sub').classList.remove('active');
+					});
+					clicked_li.querySelector('a').classList.add('active');
+					clicked_li.querySelector('.sub').classList.add('active');
+				}
 			}
-		}
+		});
 	});
-});
+	//링크 안먹혀서 강제로 연결함..
+	gnb_sub[0].querySelectorAll('li')[0].addEventListener('click',()=>{
+		window.location.href="../about/introduction.html";
+	});
+	gnb_sub[1].querySelectorAll('li')[0].addEventListener('click',()=>{
+		window.location.href="../ski/slope.html";
+	});
+	gnb_sub[2].querySelectorAll('li')[0].addEventListener('click',()=>{
+		window.location.href="../wp/guide.html";
+	});
+	gnb_sub[3].querySelectorAll('li')[0].addEventListener('click',()=>{
+		window.location.href="../room/guide.html";
+	});
+	gnb_sub[4].querySelectorAll('li')[0].addEventListener('click',()=>{
+		window.location.href="../ex/dining.html";
+	});
+	gnb_sub[5].querySelectorAll('li')[0].addEventListener('click',()=>{
+		window.location.href="../news/notice.html";
+	});
+}
+t_m_gnb_func();
 
-//gotoback button
-/* const back=document.querySelector('.back');
-back.onclick=()=>{
-	history.back(); //history.go(-1);
-} */
 
 //resize
 window.addEventListener('resize',()=>{
@@ -125,6 +141,7 @@ window.addEventListener('resize',()=>{
 		gnb.style.left=`${50}%`;
 		tnb.style.left='auto';
 		tnb.style.right=`${20}px`;
+		dt_gnb_func();
 		gnb_sub.forEach(elem=>{
 			elem.classList.remove('active');
 		})
@@ -136,6 +153,7 @@ window.addEventListener('resize',()=>{
 		tnb.style.left=`${100}%`;
 		tnb.style.right='auto';
 		toggle.classList.remove('on');
+		t_m_gnb_func();
 		gnb_li_a.forEach(elem=>{
 			elem.classList.remove('active');
 		})
@@ -154,107 +172,4 @@ familySite.addEventListener('click',(e)=>{
 });
 
 //weather api
-var today = new Date();
-var week = new Array('일','월','화','수','목','금','토');
-var year = today.getFullYear();
-var month = today.getMonth()+1;
-var day = today.getDate();
-var hours = today.getHours();
-var minutes = today.getMinutes();
-
-/* 기상청 30분마다 발표 -> 30분보다 작으면, 한시간 전 hours 값 */
-if(minutes < 30){
-	hours = hours - 1;
-	if(hours < 0){
-		// 자정 이전은 전날로 계산
-		today.setDate(today.getDate() - 1);
-		day = today.getDate();
-		month = today.getMonth()+1;
-		year = today.getFullYear();
-		hours = 23;
-	}
-}
-/* 9시 -> 09시 변경 필요 */
-if(hours < 10) { hours = '0' + hours; }
-if(month < 10) { month = '0' + month; }    
-if(day < 10) { day = '0' + day; }
-
-today = year + "" + month + "" + day;
-
-/* 좌표 */
-const _nx = 123, 
-_ny = 84,
-WEATHER_API = config.apikey;
-let WEATHER_URL = "http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtFcst";
-WEATHER_URL += "?ServiceKey=" + WEATHER_API;
-WEATHER_URL += "&pageNo=1&numOfRows=1000";
-WEATHER_URL += "&dataType=json";
-WEATHER_URL += "&base_date=" + today;
-WEATHER_URL += "&base_time=" + hours +"00";
-WEATHER_URL += "&nx=" + _nx + "&ny=" + _ny;
-
-fetch(WEATHER_URL)
-	.then(res => res.json())
-	.then(data => {
-		const rData = data.response.body.items.item;
-		console.log(rData);
-		let tempArr = [];
-		let rainArr = [];
-		let skyArr = [];
-		/*rData을 순회하는 코드로 작성해야 category에 접근할 수 있을 것 같음 */
-		rData.forEach(elem=>{
-			if(elem.category == 'T1H'){
-				tempArr.push(elem.fcstValue);
-				gnb_deg.innerText = `${tempArr[0]}°C`;
-				info_deg.innerText = `${tempArr[0]}°C`;
-			} else if(elem.category == 'PTY'){
-				rainArr.push(elem.fcstValue);
-			} else if(elem.category == 'SKY'){
-				skyArr.push(elem.fcstValue);
-			}
-		});
-		console.log(rainArr);
-		console.log(skyArr);
-		if(rainArr[0] == '0'){
-			switch(skyArr[0]){
-				case '1':
-					gnb_descr.innerText="맑음";
-					info_descr.innerText="맑음";
-					gnb_icon.classList.add('fa-solid', 'fa-sun');
-					info_icon.classList.add('fa-solid', 'fa-sun');
-					break;
-				case '3':
-				case '4':
-					gnb_descr.innerText="흐림";
-					info_descr.innerText="흐림";
-					gnb_icon.classList.add('fa-solid', 'fa-cloud');
-					info_icon.classList.add('fa-solid', 'fa-cloud');
-					break;
-			}
-		} else{
-			switch(rainArr[0]){
-				case '1':
-				case '5':
-					gnb_descr.innerText="비";
-					info_descr.innerText="비";
-					gnb_icon.classList.add('fa-solid', 'fa-umbrella');
-					info_icon.classList.add('fa-solid', 'fa-umbrella');
-					break;
-				case '2':
-				case '6':
-					gnb_descr.innerText="눈/비";
-					info_descr.innerText="눈/비";
-					gnb_icon.classList.add('fa-solid', 'fa-cloud-rain');
-					info_icon.classList.add('fa-solid', 'fa-cloud-rain');
-					break;
-				case '3':
-				case '7':
-					gnb_descr.innerText="눈";
-					info_descr.innerText="눈";
-					gnb_icon.classList.add('fa-regular', 'fa-snowflake');
-					info_icon.classList.add('fa-regular', 'fa-snowflake');
-					break;
-			}
-		}
-	})
-	.catch(err => console.log(err));
+weatherFetch(gnb_deg, gnb_descr, gnb_icon);

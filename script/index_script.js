@@ -1,6 +1,10 @@
 const mainVisual=document.querySelector('#main_visual');
 const qBtns=document.querySelector('#q_btns');
 const qBtns_li=qBtns.querySelectorAll('li');
+const info_weather=document.querySelector('.info_wrap>.weather_wrap');
+const info_descr=info_weather.querySelector('.weather');
+const info_icon=info_weather.querySelector('i');
+const info_deg=info_weather.querySelector('.degree');
 
 //main_visual swiper
 const swiper1 = new Swiper('.swiper1', {
@@ -123,3 +127,6 @@ const swiper2 = new Swiper('.swiper2', {
   observer: true,
   observeParents: true,
 });
+
+//weather api
+weatherFetch(info_deg, info_descr, info_icon);
