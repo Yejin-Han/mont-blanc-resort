@@ -14,7 +14,7 @@
 <h2>🗓️ 제작 기간</h2>
 > 2022. 11. 28. ~ 2022. 12. 30.
 <h2>📸 완성 화면</h2>
-<img alt="PC 완성화면" src="/capture/pc_main.jpg" align="center" />
+<div align="center"><img alt="PC 완성화면" src="/capture/pc_main.jpg" /></div>
 <table>
   <tr>
     <td width="55%"><img alt="태블릿 완성화면" src="/capture/t_main.jpg" /></td>
@@ -37,7 +37,7 @@
     <ol>
       <li>header</li>
       <li>Section 1 : Main Visual</li>
-      <li>Section 2 : Quick buttons</li>
+      <li>Section 2 : Quick Menu</li>
       <li>Section 3 : Slope</li>
       <li>Section 4 : Promotion</li>
       <li>footer</li>
@@ -56,70 +56,89 @@
   </li>
 </ul>
 <h2>📋 구현 기능</h2>
-<h3>header</h3>
-  <table>
+<h3>Main</h3>
+  <table align="center">
     <tr>
-      <td width="75%"><img alt="PC 내비게이션" src="/capture/pc_gnb.jpg" /></td>
-      <td width="25%"><img alt="모바일 내비게이션" src="/capture/m_gnb.jpg" /></td>
+      <td><img alt="PC 완성화면" src="/capture/resort_d_1.gif" /></td>
+      <td><img alt="PC 내비게이션" src="/capture/resort_t_1.gif" /></td>
+      <td><img alt="모바일 내비게이션" src="/capture/resort_m_1.gif" /></td>
     </tr>
   </table>
   <ul>
-    <li>PC에서는 글로벌 내비게이션에 마우스를 갖다대면 풀다운 메뉴가 펼쳐집니다. 국내 여러 스키장 사이트를 참고하여 기본 스키장 + 워터파크와 숙박시설을 갖춘 스키장을 주제로 정보를 구성하였습니다.</li>
-    <li>기준으로 삼은 강원도 평창의 현재 날씨를 함께 보여줍니다.</li>
-    <li>태블릿과 모바일에서는 토글 버튼이 보이며, 버튼을 누르면 아코디언 메뉴가 슬라이드 되어 나타납니다. 탑 내비게이션 역시 글로벌 네비게이션과 함께 등장하도록 위치를 정하였습니다.</li>
-    <li>메뉴를 누르면 하이라이트 애니메이션과 함께 서브메뉴가 등장하며, 서브메뉴를 누를 때 해당 페이지로 이동합니다.</li>
-  </ul>
-<h3>Section 1</h3>
-  <table>
-    <tr>
-      <td width="75%"><img alt="PC 섹션1" src="/capture/pc_sect1.jpg" /></td>
-      <td width="25%"><img alt="모바일 섹션1" src="" /></td>
-    </tr>
-  </table>
-  <ul>
-    <li></li>
-  </ul>
-<h3>Section 2</h3>
-  
-  <ul>
-    <li></li>
-  </ul>
-<h3>Section 3</h3>
-  
-  <ul>
-    <li></li>
-  </ul>
-<h3>Section 4</h3>
-  
-  <ul>
-    <li></li>
+    <li>국내 여러 스키장 사이트를 참고하여 기본 스키장 + 워터파크와 숙박시설을 갖춘 스키장을 주제로 정보를 구성하였습니다.</li>
+    <li>PC에서는 글로벌 내비게이션에 마우스를 갖다대면 풀다운 메뉴가 펼쳐지며, 태블릿과 모바일에서는 토글 버튼이 보이며, 버튼을 누르면 아코디언 메뉴가 슬라이드 되어 나타납니다.</li>
+    <li>화면 하단에 중요 공지사항을 fixed하여 보여주는데, 태블릿과 모바일에서는 이 때 기준으로 삼은 강원도 평창의 현재 날씨를 함께 보여주며 PC에서는 글로벌 내비게이션에 포함되어 보입니다.</li>
+    <li>스크롤을 내려 Quick Menu에 일정 부분 이상 진입하면 통통 튀어오르는 듯한 애니메이션을 class에 주었습니다.</li>
+    <li>Promotion 섹션의 Swiper은 PC에서 contents header의 p와 pagination을 반응하도록 하고 태블릿과 모바일에서는 각 swiper-slide 안의 p가 반응하도록 하였으며 반응형에 따라 slide-per-view나 세부 사항을 바뀌도록 하였습니다.</li>
   </ul>
 <h3>Sub 1</h3>
+  <table align="center">
+    <tr>
+      <td><img alt="PC 완성화면" src="/capture/resort_d_2.gif" /></td>
+      <td><img alt="PC 내비게이션" src="/capture/resort_t_2.gif" /></td>
+      <td><img alt="모바일 내비게이션" src="/capture/resort_m_2.gif" /></td>
+    </tr>
+  </table>
   
   <ul>
     <li></li>
   </ul>
 <h3>Sub 2</h3>
+  <table align="center">
+    <tr>
+      <td><img alt="PC 완성화면" src="/capture/resort_d_3.gif" /></td>
+      <td><img alt="PC 내비게이션" src="/capture/resort_t_3.gif" /></td>
+      <td><img alt="모바일 내비게이션" src="/capture/resort_m_3.gif" /></td>
+    </tr>
+  </table>
   
   <ul>
     <li></li>
   </ul>
 <h3>Sub 3</h3>
+  <table align="center">
+    <tr>
+      <td><img alt="PC 완성화면" src="/capture/resort_d_4.gif" /></td>
+      <td><img alt="PC 내비게이션" src="/capture/resort_t_4.gif" /></td>
+      <td><img alt="모바일 내비게이션" src="/capture/resort_m_4.gif" /></td>
+    </tr>
+  </table>
   
   <ul>
     <li></li>
   </ul>
 <h3>Sub 4</h3>
+  <table align="center">
+    <tr>
+      <td><img alt="PC 완성화면" src="/capture/resort_d_5.gif" /></td>
+      <td><img alt="PC 내비게이션" src="/capture/resort_t_5.gif" /></td>
+      <td><img alt="모바일 내비게이션" src="/capture/resort_m_5.gif" /></td>
+    </tr>
+  </table>
   
   <ul>
     <li></li>
   </ul>
 <h3>Sub 5</h3>
+  <table align="center">
+    <tr>
+      <td><img alt="PC 완성화면" src="/capture/resort_d_6.gif" /></td>
+      <td><img alt="PC 내비게이션" src="/capture/resort_t_6.gif" /></td>
+      <td><img alt="모바일 내비게이션" src="/capture/resort_m_6.gif" /></td>
+    </tr>
+  </table>
   
   <ul>
     <li></li>
   </ul>
 <h3>Sub 6</h3>
+  <table align="center">
+    <tr>
+      <td><img alt="PC 완성화면" src="/capture/resort_d_7.gif" /></td>
+      <td><img alt="PC 내비게이션" src="/capture/resort_t_7.gif" /></td>
+      <td><img alt="모바일 내비게이션" src="/capture/resort_m_7.gif" /></td>
+    </tr>
+  </table>
   
   <ul>
     <li></li>
